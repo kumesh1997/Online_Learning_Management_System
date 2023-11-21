@@ -46,7 +46,7 @@ class Crud_model extends CI_Model {
                 mkdir('uploads/thumbnails/category_thumbnails', 0777, true);
             }
             if ($_FILES['category_thumbnail']['name'] == "") {
-                $data['thumbnail'] = 'category-thumbnail.png';
+                $data['thumbnail'] = 'category-thumbnail.jpg';
             }else {
                 $data['thumbnail'] = md5(rand(10000000, 20000000)).'.jpg';
                 move_uploaded_file($_FILES['category_thumbnail']['tmp_name'], 'uploads/thumbnails/category_thumbnails/'.$data['thumbnail']);

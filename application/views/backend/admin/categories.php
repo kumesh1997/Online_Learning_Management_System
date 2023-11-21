@@ -16,7 +16,18 @@
          $sub_categories = $this->crud_model->get_sub_categories($category['id']); ?>
          <div class="col-md-6 col-lg-6 col-xl-4 on-hover-action" id = "<?php echo $category['id']; ?>">
              <div class="card d-block">
-                 <img class="card-img-top" src="<?php echo base_url('uploads/thumbnails/category_thumbnails/'.$category['thumbnail']); ?>" alt="Card image cap">
+             <?php
+                // Assuming $category['thumbnail'] contains the image filename
+                $imageUrl = base_url('uploads/thumbnails/category_thumbnails/'.$category['thumbnail']);
+                ?>
+
+                <?php if ($imageUrl): ?>
+                    <img class="card-img-top" src="<?php echo $imageUrl; ?>" alt="Card image cap">
+                    <!-- <div class="gray-background" style="background-color: #0000FF; width: 100%; height: 250px;"></div> -->
+                <?php else: ?>
+                    <div class="gray-background" style="background-color: #cccccc; width: 100%; height: 250px;"></div>
+                <?php endif; ?>
+
                  <div class="card-body">
                      <h4 class="card-title mb-0"><i class="<?php echo $category['font_awesome_class']; ?>"></i> <?php echo $category['name']; ?></h4>
                      <small style="font-style: italic;"><p class="card-text"><?php echo count($sub_categories).' '.get_phrase('sub_categories'); ?></p></small>
