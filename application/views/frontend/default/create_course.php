@@ -1,4 +1,4 @@
-<section class="category-header-area" style="background-color: #505763;">
+<section class="category-header-area" style="background-color: #c414a7;">
     <div class="container-lg">
         <div class="row">
             <div class="col">
