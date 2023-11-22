@@ -508,7 +508,7 @@ class Crud_model extends CI_Model {
         if (file_exists('uploads/thumbnails/course_thumbnails/'.$course_id.'.jpg'))
         return base_url().'uploads/thumbnails/course_thumbnails/'.$course_id.'.jpg';
         else
-        return base_url().'uploads/thumbnails/course_thumbnails/course-thumbnail.png';
+        return base_url().'uploads/thumbnails/course_thumbnails/course-thumbnail.jpg';
     }
     public function get_lesson_thumbnail_url($lesson_id) {
 
