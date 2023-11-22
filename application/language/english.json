@@ -652,5 +652,6 @@
     "user_added_successfully": "User added successfully",
     "welcom": "Welcom",
     "no_records_found": "No records found",
-    "email_duplication": "Email duplication"
+    "email_duplication": "Email duplication",
+    "upload": "Upload"
 }

@@ -82,7 +82,7 @@ $base-font: 'Raleway', sans-serif;
     cursor: pointer;
     overflow: hidden;
     &::after {
-      content: 'add';
+      /* content: ''; */
       font-family: 'Material Icons';
       position: absolute;
       font-size: 2.5rem;

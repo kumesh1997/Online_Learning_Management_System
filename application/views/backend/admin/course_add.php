@@ -275,17 +275,16 @@
                                         <div class="col-xl-8">
                                             <div class="form-group row mb-3">
                                                 <label class="col-md-2 col-form-label" for="course_thumbnail_label"><?php echo get_phrase('course_thumbnail'); ?></label>
-                                                <div class="col-md-10">
-                                                    <div class="wrapper-image-preview" style="margin-left: -6px;">
-                                                        <div class="box" style="width: 250px;">
-                                                            <div class="js--image-preview" style="background-image: url(<?php echo base_url('uploads/thumbnails/course_thumbnails/course-thumbnail.jpg'); ?>); background-color: #F5F5F5;"></div>
+                                                <!-- <div class="col-md-10"> -->
+                                                    <!-- <div class="wrapper-image-preview" style="margin-left: -6px;"> -->
+                                                        <!-- <div class="box" style="width: 250px; height: 250px;"> -->
                                                             <div class="upload-options">
-                                                                <label for="course_thumbnail" class="btn"> <i class="mdi mdi-camera"></i> <?php echo get_phrase('course_thumbnail'); ?> <br> <small>(600 X 600)</small> </label>
+                                                                <label for="course_thumbnail" class="btn"> <i class="mdi mdi-camera"></i> <?php echo get_phrase('Upload'); ?> <br> <small>(600 X 600)</small> </label>
                                                                 <input id="course_thumbnail" style="visibility:hidden;" type="file" class="image-upload" name="course_thumbnail" accept="image/*">
                                                             </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                        <!-- </div> -->
+                                                    <!-- </div> -->
+                                                <!-- </div> -->
                                             </div>
                                         </div> <!-- end col -->
                                     </div> <!-- end row -->
