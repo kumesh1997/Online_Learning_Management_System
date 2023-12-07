@@ -1009,32 +1009,6 @@ select + .select2-container{
     line-height: 1;
     margin-bottom: 10px;
     text-shadow: 0 2px 4px rgba(41,48,59,.55);
-    overflow: hidden; /* Hide overflow content */
-    white-space: nowrap; /* Prevent line breaks */  
-    border-right: .15em solid white;
-    
-    animation: 
-        typing 3.5s steps(35, end),
-        blink-caret .75s step-end infinite;
-}
-/* Animation for the typewriter effect */
-@keyframes typing {
-    from { width: 0 }
-    to { width: 100% }
-  }
-
-/* Animation for the cursor blinking */
-@keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: white; }
-  }
-
-.home-banner-wrap h2::after {
-    content: '...'; /* Cursor for the typewriter effect */
-    display: inline-block;
-    margin-right: 0px; /* Adjust the cursor position */
-    animation: blink 1s step-end infinite, typewriter 4s steps(40) infinite;
-    position: relative;
 }
 
 .home-banner-wrap p{
