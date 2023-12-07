@@ -4,7 +4,7 @@
             <div class="col">
                 <!-- Content -->
                 <div class="home-banner-wrap">
-                    <h2><?php echo get_frontend_settings('banner_title'); ?></h2>
+                    <h2 class="line-1 anim-typewriter"><?php echo get_frontend_settings('banner_title'); ?></h2>
                     <p><?php echo get_frontend_settings('banner_sub_title'); ?></p>
                 </div>
                 <div class="container-lg home-fact">
