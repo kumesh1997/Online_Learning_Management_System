@@ -2,7 +2,7 @@
 <div class="row ">
     <div class="col-xl-12">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body" style="background-color: #313A46; color: white;">
                 <h4 class="page-title"> <i class="mdi mdi-apple-keyboard-command title_icon"></i> <?php echo get_phrase('add_new_category'); ?></h4>
             </div> <!-- end card body-->
         </div> <!-- end card -->
@@ -12,7 +12,7 @@
 <div class="row justify-content-center">
     <div class="col-xl-7">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body" >
               <div class="col-lg-12">
                 <h4 class="mb-3 header-title"><?php echo get_phrase('category_add_form'); ?></h4>
 

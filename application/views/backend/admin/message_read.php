@@ -6,11 +6,11 @@
 	<div class="col-sm-12 col-md-12 col-lg-12">
 	    <!-- Chat-->
 	    <div class="card">
-	        <div class="card-body">
+	        <div class="card-body" style="background-color: #313A46; color: white;">
 	            <h4 class="header-title mb-3">Chat</h4>
 
 	            <div class="chat-conversation">
-	                <ul class="conversation-list slimscroll" style="max-height: 250px;">
+	                <ul class="conversation-list slimscroll" style="max-height: 250px; color: black;">
 	                	<?php
 						$messages =	$this->db->get_where('message' , array('message_thread_code' => $current_message_thread_code))->result_array();
 						foreach ($messages as $row):
@@ -33,7 +33,7 @@
 				                		</i>
 		                                <p> <?php echo $row['message'];?> </p>
 		                            </div>
-                                    <small class="message_sending_time"><?php echo date("d M, Y" , $row['timestamp']);?></small>
+                                    <small class="message_sending_time" style="color: white"><?php echo date("d M, Y" , $row['timestamp']);?></small>
 		                        </div>
 		                    </li>
 	                    <?php endforeach;?>
@@ -41,13 +41,13 @@
 	                <form method="post" action="<?php echo site_url('admin/message/send_reply/'.$current_message_thread_code); ?>" class="needs-validation" novalidate name="chat-form" id="chat-form">
 	                    <div class="row">
 	                        <div class="col">
-	                            <input type="text" name="message" class="form-control chat-input" placeholder="Enter your text" required>
+	                            <input type="text" name="message" class="form-control chat-input" style="border:none; border-bottom: 1px solid gray; border-radius: 0;" placeholder="Enter your message" required>
 	                            <div class="invalid-feedback">
 	                                <?php echo get_phrase('Please enter your messsage'); ?>
 	                            </div>
 	                        </div>
 	                        <div class="col-auto">
-	                            <button type="submit" class="btn btn-danger chat-send btn-block waves-effect waves-light"><?php echo get_phrase('sent_message'); ?></button>
+	                            <button type="submit" class="btn btn-primary chat-send btn-block waves-effect waves-light"><?php echo get_phrase('sent_message'); ?></button>
 	                        </div>
 	                    </div>
 	                </form>

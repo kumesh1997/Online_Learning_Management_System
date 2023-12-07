@@ -1,7 +1,7 @@
 <div class="row ">
     <div class="col-xl-12">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body" style="background-color: #313A46; color: white;">
                 <h4 class="page-title"> <i class="mdi mdi-apple-keyboard-command title_icon"></i> <?php echo get_phrase('categories'); ?>
                   <a href="<?php echo site_url('admin/category_form/add_category'); ?>" class="btn btn-primary btn-rounded alignToTitle"><i class="mdi mdi-plus"></i><?php echo get_phrase('add_new_category'); ?></a>
                 </h4>

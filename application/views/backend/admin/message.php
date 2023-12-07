@@ -19,6 +19,11 @@
 <div class="card" >
     <div class="card-body">
         <div class="row">
+            <!-- Chat area -->
+            <div class="col-xs-12 col-sm-12 col-md-9">
+                <?php include $message_inner_page_name.'.php';?>
+            </div>
+
             <div class="col-xs-12 col-sm-12 col-md-3">
                 <!-- message user inbox list -->
                 <ul class="navbar-nav">
@@ -57,9 +62,7 @@
                     <?php endforeach;?>
                 </ul>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-9">
-                <?php include $message_inner_page_name.'.php';?>
-            </div>
+           
         </div>
     </div>
 </div>
