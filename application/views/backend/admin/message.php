@@ -1,28 +1,25 @@
 <div class="row ">
     <div class="col-xl-12">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body" style="background-color: #313A46; color: white; display: flex; justify-content:space-between">
                 <h4 class="page-title"> <i class="mdi mdi-apple-keyboard-command title_icon"></i> <?php echo get_phrase('private_message'); ?></h4>
-            </div> <!-- end card body-->
-        </div> <!-- end card -->
-    </div><!-- end col-->
-</div>
 
-<div class="card">
-    <div class="card-body">
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
-
-                <!-- compose new email button -->
-                <div class="mail-sidebar-row visible-xs">
+                 <!-- compose new email button -->
+                 <div class="mail-sidebar-row visible-xs" style="width: 30%">
                     <a href="<?php echo site_url('admin/message/message_new');?>" class="btn btn-success btn-block">
                         <?php echo get_phrase('new_message');?>
                         <i class="mdi mdi-pencil float-right"></i>
                     </a>
                 </div>
-                <hr>
+            </div> <!-- end card body-->
+        </div> <!-- end card -->
+    </div><!-- end col-->
+</div>
 
-
+<div class="card" >
+    <div class="card-body">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-3">
                 <!-- message user inbox list -->
                 <ul class="navbar-nav">
 
@@ -60,7 +57,7 @@
                     <?php endforeach;?>
                 </ul>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+            <div class="col-xs-12 col-sm-12 col-md-9">
                 <?php include $message_inner_page_name.'.php';?>
             </div>
         </div>

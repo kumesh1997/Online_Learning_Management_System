@@ -1,7 +1,7 @@
 <div class="row ">
     <div class="col-xl-12">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body" style="background-color: #313A46; color: white;">
                 <h4 class="page-title"> <i class="mdi mdi-apple-keyboard-command title_icon"></i> <?php echo get_phrase('add_new_course'); ?></h4>
             </div> <!-- end card body-->
         </div> <!-- end card -->
@@ -14,7 +14,7 @@
             <div class="card-body">
 
                 <h4 class="header-title mb-3"><?php echo get_phrase('course_adding_form'); ?>
-                    <a href="<?php echo site_url('admin/courses'); ?>" class="alignToTitle btn btn-outline-secondary btn-rounded btn-sm"> <i class=" mdi mdi-keyboard-backspace"></i> <?php echo get_phrase('back_to_course_list'); ?></a>
+                    <a href="<?php echo site_url('admin/courses'); ?>" class="alignToTitle btn btn-secondary btn-rounded btn-sm"> <i class=" mdi mdi-keyboard-backspace"></i> <?php echo get_phrase('back_to_course_list'); ?></a>
                 </h4>
 
                 <div class="row">
@@ -23,7 +23,7 @@
                             <div id="basicwizard">
 
                                 <ul class="nav nav-pills nav-justified form-wizard-header mb-3">
-                                    <li class="nav-item">
+                                    <li class="nav-item" >
                                         <a href="#basic" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
                                             <i class="mdi mdi-fountain-pen-tip mr-1"></i>
                                             <span class="d-none d-sm-inline"><?php echo get_phrase('basic'); ?></span>

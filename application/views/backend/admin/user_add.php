@@ -1,7 +1,7 @@
 <div class="row ">
     <div class="col-xl-12">
-        <div class="card">
-            <div class="card-body">
+        <div class="card" >
+            <div class="card-body" style="background-color: #313A46; color: white;">
                 <h4 class="page-title"> <i class="mdi mdi-apple-keyboard-command title_icon"></i> <?php echo $page_title; ?> </h4>
             </div> <!-- end card body-->
         </div> <!-- end card -->
@@ -10,7 +10,7 @@
 <div class="row">
     <div class="col-xl-12">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body" >
 
                 <h4 class="header-title mb-3"><?php echo get_phrase('student_add_form'); ?></h4>
 

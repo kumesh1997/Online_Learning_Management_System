@@ -4011,6 +4011,7 @@ section.purchase-history-list-area {
 }
 .footer-menu .nav-item:not(:last-child){
     margin-right: 20px;
+    
 }
 .footer-menu .nav-link{
     padding: 6px 0;
