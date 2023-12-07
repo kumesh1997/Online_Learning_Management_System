@@ -18,11 +18,13 @@
       $categories = $this->crud_model->get_categories()->result_array();
       foreach ($categories as $key => $category):?>
       <li class="has-children">
+        <!-- category -->
         <a href="#">
           <span class="icon"><i class="<?php echo $category['font_awesome_class']; ?>"></i></span>
           <span><?php echo $category['name']; ?></span>
           <span class="has-sub-category"><i class="fas fa-angle-right"></i></span>
         </a>
+        <!-- Sub category -->
         <ul class="sub-category is-hidden">
           <li class="go-back-menu"><a href=""><i class="fas fa-angle-left"></i>Menu</a></li>
           <li class="go-back"><a href="">

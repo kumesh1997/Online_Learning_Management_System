@@ -3,8 +3,7 @@
         <div class="row">
             <div class="col">
                 <nav>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="<?php echo site_url('home'); ?>"><i class="fas fa-home"></i></a></li>
+                    <ol class="breadcrumb category-name">
                         <li class="breadcrumb-item">
                             <a href="#">
                                 <?php echo $page_title; ?>
@@ -12,9 +11,6 @@
                         </li>
                     </ol>
                 </nav>
-                <h1 class="category-name">
-                    <?php echo get_phrase('register_yourself'); ?>
-                </h1>
             </div>
         </div>
     </div>

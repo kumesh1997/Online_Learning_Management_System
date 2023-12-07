@@ -3,8 +3,7 @@
         <div class="row">
             <div class="col">
                 <nav>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="<?php echo site_url('home'); ?>"><i class="fas fa-home"></i></a></li>
+                    <ol class="breadcrumb category-name">
                         <li class="breadcrumb-item">
                             <a href="#">
                                 <?php echo $page_title; ?>
@@ -12,9 +11,6 @@
                         </li>
                     </ol>
                 </nav>
-                <h1 class="category-name">
-                    <?php echo get_phrase('registered_user'); ?>
-                </h1>
             </div>
         </div>
     </div>
@@ -32,6 +28,7 @@
                       </div>
                       <form action="<?php echo site_url('login/validate_login/user'); ?>" method="post">
                           <div class="content-box">
+                            <!-- username , pw -->
                               <div class="basic-group">
                                   <div class="form-group">
                                       <label for="login-email"><span class="input-field-icon"><i class="fas fa-envelope"></i></span> <?php echo get_phrase('email'); ?>:</label>
@@ -47,7 +44,6 @@
                               <button type="submit" class="btn"><?php echo get_phrase('login'); ?></button>
                           </div>
                           <div class="forgot-pass text-center">
-                              <span>or</span>
                               <a href="javascript::" onclick="toggoleForm('forgot_password')"><?php echo get_phrase('forgot_password'); ?></a>
                           </div>
                           <div class="account-have text-center">

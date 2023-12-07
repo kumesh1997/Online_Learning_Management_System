@@ -13,6 +13,7 @@
 
           <?php include 'menu.php'; ?>
 
+          <!-- input field -->
           <form class="inline-form" action="<?php echo site_url('home/search'); ?>" method="get" style="width: 100%;">
             <div class="input-group search-box mobile-search">
               <input type="text" name = 'query' class="form-control" placeholder="<?php echo get_phrase('search_for_courses'); ?>">

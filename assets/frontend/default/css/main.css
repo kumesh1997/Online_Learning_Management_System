@@ -217,11 +217,11 @@ select + .select2-container{
     padding: 10px 0;
 }
 .search-box input{
-    background-color: #f2f3f5;
+    background-color: #e7e9ed;
     border: 1px solid #f2f3f5;
     height: 45px;
     padding: 0 15px;
-    border-radius: 2px 0 0 2px;
+    border-radius: 40px 0 0 40px;
     font-size: 13px;
 }
 .search-box input:focus{
@@ -236,7 +236,7 @@ select + .select2-container{
 }
 .search-box button{
     border: 1px solid #f2f3f5;
-    border-radius: 0 2px 2px 0;
+    border-radius: 0 40px 40px 0;
     font-size: 15px;
     padding: 10px 15px;
     background: #f2f3f5;
@@ -660,7 +660,7 @@ select + .select2-container{
     line-height: 1.35135;
     font-weight: 600;
     margin-left: 5px !important;
-    border-radius: 2px !important;
+    border-radius: 40px !important;
 }
 .sign-in-box .btn-sign-in{
     color: #686f7a;
@@ -3376,7 +3376,7 @@ section.user-dashboard-area {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    background-color: #fff;
+    background-color: #c2b1b1;
 }
 
 .user-dashboard-sidebar {
@@ -3433,7 +3433,6 @@ section.user-dashboard-area {
 }
 .user-dashboard-content .content-title-box {
     text-align: center;
-    border-bottom: 1px solid #dedfe0;
     padding: 20px;
 }
 
@@ -3451,7 +3450,6 @@ section.user-dashboard-area {
 }
 
 .user-dashboard-content .content-update-box {
-    border-top: 1px solid #dedfe0;
     padding: 20px;
     text-align: center;
 }
@@ -3460,9 +3458,10 @@ section.user-dashboard-area {
     color: #fff;
     background-color: #57B9FF;
     border-color: #57B9FF;
-    padding: 11px 12px;
+    padding: 11px 20px;
+    width: 20%;
     font-size: 15px;
-    border-radius: 2px;
+    border-radius: 40px;
     line-height: 1.35135;
     font-weight: 600;
 }
@@ -3482,17 +3481,27 @@ section.user-dashboard-area {
 .user-dashboard-content .content-box .form-group .form-control{
     font-size: 16px;
     padding: 10px 12px;
-    border: 1px solid #cacbcc;
-    border-radius: 2px;
+    border: none; /* Remove the border */
+    border-bottom: 1px solid #032343; /* Add only the bottom border */
+    border-radius: 0; /* Remove border-radius or set to 0 if needed */
 }
+
+
+.user-dashboard-content .content-box .form-group label {
+    color: #645c5c; /* Set the default label color */
+    transition: color 0.3s ease; /* Add a smooth transition for the color change */
+}
+
 .user-dashboard-content .content-box .input-group>.input-group-prepend:not(:first-child)>.input-group-text {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
 .user-dashboard-content .content-box .form-group .custom-select:focus,
 .user-dashboard-content .content-box .form-group input:focus{
-    border: 1px solid #76c5d6;
+    border: none;
+    border-bottom: 1px solid #76c5d6;
 }
+
 .user-dashboard-content .content-box .form-group small.form-text{
     margin-top: 5px;
     margin-bottom: 10px;
@@ -4141,6 +4150,7 @@ div.tagsinput span.tag a {
 .login-form, .register-form, .forgot-password-form {
     background-color: #fff;
     padding-bottom: 30px;
+    width: 50%;
 }
 
 .mobile-main-nav .all-category-devided{
