@@ -8128,6 +8128,7 @@ body {
   margin-left: 250px;
   overflow: hidden;
   padding: 5px 20px;
+  background: #000;
   min-height: 80vh; }
 
 .left-side-menu {

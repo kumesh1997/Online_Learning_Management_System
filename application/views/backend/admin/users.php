@@ -16,7 +16,7 @@
             <div class="card-body">
               <h4 class="mb-3 header-title"><?php echo get_phrase('students'); ?></h4>
               <div class="table-responsive-sm mt-4">
-                <table id="basic-datatable" class="table table-striped table-centered mb-0">
+                <table id="basic-datatable" class="table table-striped table-dark table-centered mb-0">
                   <thead>
                     <tr>
                       <th>#</th>

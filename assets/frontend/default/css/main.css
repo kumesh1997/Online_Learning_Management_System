@@ -921,7 +921,8 @@ select + .select2-container{
     -webkit-box-flex: 0;
     -ms-flex: 0 0 18%;
     flex: 0 0 18%;
-    max-width: 18%;
+    max-width: 14%; 
+    /* 18 */
 }
 .course-preview-modal .course-preview-video-list .course-preview-free-video .course-name {
     -webkit-box-flex: 0;
@@ -3376,7 +3377,7 @@ section.user-dashboard-area {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    background-color: #c2b1b1;
+    background-color: #ece7e7;
 }
 
 .user-dashboard-sidebar {

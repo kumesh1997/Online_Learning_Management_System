@@ -33,7 +33,7 @@
               </div>
               <div class="table-responsive-sm mt-4">
                   <?php if (count($enrol_history->result_array()) > 0): ?>
-                      <table class="table table-striped table-centered mb-0">
+                      <table class="table table-striped table-dark table-centered mb-0">
                           <thead>
                               <tr>
                                   <th><?php echo get_phrase('photo'); ?></th>
