@@ -983,17 +983,45 @@ select + .select2-container{
     background-size: cover;
     background-repeat: no-repeat;
     padding: 170px 0 130px;
+    margin-bottom: 5%;
     color: #fff;
 }
 .home-banner-wrap{
-    max-width: 500px;
+    max-width: 1080px;
+    min-height: 50vh;
 }
 .home-banner-wrap h2{
-    font-size: 44px;
+    font-size: 80px;
     font-weight: 600;
     line-height: 1;
     margin-bottom: 10px;
     text-shadow: 0 2px 4px rgba(41,48,59,.55);
+    overflow: hidden; /* Hide overflow content */
+    white-space: nowrap; /* Prevent line breaks */
+}
+/* Animation for the typewriter effect */
+@keyframes typewriter {
+    0%, 50%, 100% {
+        width: 0;
+    }
+    25%, 75% {
+        width: 100%;
+    }
+}
+
+/* Animation for the cursor blinking */
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.home-banner-wrap h2::after {
+    content: '...'; /* Cursor for the typewriter effect */
+    display: inline-block;
+    margin-right: 3px; /* Adjust the cursor position */
+    animation: blink 1s step-end infinite, typewriter 4s steps(40) infinite;
+    position: relative;
 }
 .home-banner-wrap p{
     font-size: 18px;
@@ -1021,16 +1049,12 @@ select + .select2-container{
     background: #3E92CC;
     color: #fff;
 }
-.home-fact-area{
-    background-color: #0A2463;
-    background: -webkit-linear-gradient(-45deg,#0A2463,#3E92CC);
-    background: -moz-linear-gradient(-45deg,#0A2463 0,#3E92CC 100%);
-    background: -ms-linear-gradient(-45deg,#0A2463 0,#3E92CC 100%);
-    background: -o-linear-gradient(-45deg,#0A2463 0,#3E92CC 100%);
-    background: linear-gradient(-45deg,#0A2463,#3E92CC);
-    color: #fff;
+.home-banner-area .home-fact {
+    background: transparent; /* Adjust the alpha channel for transparency */
+    color: #57B9FF;
     padding: 15px 0;
-    margin-bottom: 50px
+    margin-bottom: 50px;
+    z-index: 1; /* Set a higher z-index to ensure it's on top of other elements */
 }
 .home-fact-box .text-box{
     padding: 10px 0 10px 63px;
