@@ -96,8 +96,18 @@ input:focus {
 select + .select2-container{
     width: 100%!important;
 }
+.select2{
+    border-radius: 40px!important;
+}
 
+.black-card{
+    background-color: #313A46!important;
+    color: white!important;
+}
 
+.text-white{
+    color: white!important;
+}
 
 .rating i{
     color: #dedfe0;
@@ -329,7 +339,9 @@ select + .select2-container{
     width: 330px;
 }
 
-
+.bg-black {
+    background-color: #000!important;
+}
 
 .course-list-dropdown .item-list{
     max-height: 230px;
@@ -1108,6 +1120,28 @@ select + .select2-container{
     right: auto;
     left: 0
 }
+
+.fab {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #2196F3;
+    color: #fff;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .fab:hover {
+    background-color: #1565C0;
+  }
 
 .course-carousel .slick-prev:hover,
 .course-carousel .slick-next:hover{
@@ -3757,6 +3791,10 @@ span.select2-selection.select2-selection--single {
     height: auto;
     border-radius: 2px;
 }
+.select2-container .select2-selection--single{
+    border-radius: 40px!important;
+}
+
 .select2-container .select2-selection--single .select2-selection__rendered {
     padding: 10px;;
 }

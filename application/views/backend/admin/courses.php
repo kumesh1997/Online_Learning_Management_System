@@ -1,22 +1,22 @@
-<div class="row ">
+<div class="row "  >
     <div class="col-xl-12">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body" style="background-color: #313A46; color: white;">
                 <h4 class="page-title"> <i class="mdi mdi-apple-keyboard-command title_icon"></i> <?php echo get_phrase('courses'); ?>
-                    <a href="<?php echo site_url('admin/course_form/add_course'); ?>" class="btn btn-outline-primary btn-rounded alignToTitle"><i class="mdi mdi-plus"></i><?php echo get_phrase('add_new_course'); ?></a>
+                    <a href="<?php echo site_url('admin/course_form/add_course'); ?>" class="btn btn-primary btn-rounded alignToTitle"><i class="mdi mdi-clipboard-text"></i> <?php echo get_phrase('add_new_course'); ?></a>
                 </h4>
-            </div> <!-- end card body-->
-        </div> <!-- end card -->
+            </div> 
+        </div> 
     </div><!-- end col-->
 </div>
-<div class="row">
-    <div class="col-12">
-        <div class="card widget-inline">
-            <div class="card-body p-0">
-                <div class="row no-gutters">
-                    <div class="col-sm-6 col-xl-3">
+<div class="row" >
+    <div class="col-12" >
+        <div class="card widget-inline" >
+            <div class="card-body p-0" >
+                <div class="row no-gutters" >
+                    <div class="col-sm-6 col-xl-3" >
                         <a href="<?php echo site_url('admin/courses'); ?>" class="text-secondary">
-                            <div class="card shadow-none m-0">
+                            <div class="card shadow-none m-0" style="background-color: #313A46; color: white;">
                                 <div class="card-body text-center">
                                     <i class="dripicons-link text-muted" style="font-size: 24px;"></i>
                                     <h3><span><?php echo $status_wise_courses['active']->num_rows(); ?></span></h3>
@@ -28,7 +28,7 @@
 
                     <div class="col-sm-6 col-xl-3">
                         <a href="<?php echo site_url('admin/courses'); ?>" class="text-secondary">
-                            <div class="card shadow-none m-0 border-left">
+                            <div class="card shadow-none m-0 border-left" style="background-color: #313A46; color: white;">
                                 <div class="card-body text-center">
                                     <i class="dripicons-link-broken text-muted" style="font-size: 24px;"></i>
                                     <h3><span><?php echo $status_wise_courses['pending']->num_rows(); ?></span></h3>
@@ -40,7 +40,7 @@
 
                     <div class="col-sm-6 col-xl-3">
                         <a href="<?php echo site_url('admin/courses'); ?>" class="text-secondary">
-                            <div class="card shadow-none m-0 border-left">
+                            <div class="card shadow-none m-0 border-left" style="background-color: #313A46; color: white;">
                                 <div class="card-body text-center">
                                     <i class="dripicons-star text-muted" style="font-size: 24px;"></i>
                                     <h3><span><?php echo $this->crud_model->get_free_and_paid_courses('free')->num_rows(); ?></span></h3>
@@ -52,7 +52,7 @@
 
                     <div class="col-sm-6 col-xl-3">
                         <a href="<?php echo site_url('admin/courses'); ?>" class="text-secondary">
-                            <div class="card shadow-none m-0 border-left">
+                            <div class="card shadow-none m-0 border-left" style="background-color: #313A46; color: white;">
                                 <div class="card-body text-center">
                                     <i class="dripicons-tags text-muted" style="font-size: 24px;"></i>
                                     <h3><span><?php echo $this->crud_model->get_free_and_paid_courses('paid')->num_rows(); ?></span></h3>
@@ -67,17 +67,20 @@
         </div> <!-- end card-box-->
     </div> <!-- end col-->
 </div>
+
+<!-- summery -->
 <div class="row">
     <div class="col-xl-12">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body" style="background-color: #313A46; color: white;">
                 <h4 class="mb-3 header-title"><?php echo get_phrase('course_list'); ?></h4>
+                <!-- Form -->
                 <form class="row justify-content-center" action="<?php echo site_url('admin/courses'); ?>" method="get">
                     <!-- Course Categories -->
                     <div class="col-xl-3">
                         <div class="form-group">
                             <label for="category_id"><?php echo get_phrase('categories'); ?></label>
-                            <select class="form-control select2" data-toggle="select2" name="category_id" id="category_id">
+                            <select class="form-control select2"  data-toggle="select2" name="category_id" id="category_id">
                                 <option value="<?php echo 'all'; ?>" <?php if($selected_category_id == 'all') echo 'selected'; ?>><?php echo get_phrase('all'); ?></option>
                                 <?php foreach ($categories->result_array() as $category): ?>
                                     <optgroup label="<?php echo $category['name']; ?>">
