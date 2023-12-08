@@ -18,19 +18,19 @@
 <section class="my-courses-area">
     <div class="container">
         <div class="row">
-            <div class="col">
-                <div class="my-course-search-bar">
-                    <form action="">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="<?php echo get_phrase('search_my_courses'); ?>" onkeyup="getMyWishListsBySearchString(this.value)">
-                            <div class="input-group-append">
-                                <button class="btn" type="button"><i class="fas fa-search"></i></button>
+                <div class="" style="width: 80%; margin-bottom:5%">
+                    <div class="">
+                        <form action="">
+                            <div class="input-group">
+                                <input type="text" class="form-control"  style="border-radius: 40px 0px 0px 40px" placeholder="<?php echo get_phrase('search_my_courses'); ?>" onkeyup="getMyWishListsBySearchString(this.value)">
+                                <div class="input-group-append">
+                                    <button style="border-radius: 0px 40px 40px 0px" class="btn" type="button"><i class="fas fa-search"></i></button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
         <div class="row no-gutters" id = "my_wishlists_area">
             <?php foreach ($my_courses as $my_course):
                   $instructor_details = $this->user_model->get_all_user($my_course['user_id'])->row_array();?>

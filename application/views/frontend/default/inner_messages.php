@@ -46,8 +46,8 @@
         </div>
         <div class="message-footer">
             <form class="" action="<?php echo site_url('home/my_messages/send_reply/'.$message_thread_code); ?>" method="post">
-                <textarea class="form-control" name="message" placeholder="<?php echo get_phrase('type_your_message'); ?>..."></textarea>
-                <button class="btn send-btn" type="submit"><?php echo get_phrase('send'); ?></button>
+                <textarea class="form-control"  name="message" placeholder="<?php echo get_phrase('type_your_message'); ?>..."></textarea>
+                <button class="btn send-btn" style="border-radius:40px; width:50%"type="submit"><?php echo get_phrase('send'); ?></button>
             </form>
         </div>
     </div>

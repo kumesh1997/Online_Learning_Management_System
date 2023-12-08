@@ -43,8 +43,8 @@
 
                             $last_messages_details =  $this->crud_model->get_last_message_by_message_thread_code($row['message_thread_code'])->row_array();
                             ?>
-                            <a href="<?php echo site_url('home/my_messages/read_message/'.$row['message_thread_code']); ?>">
-                                <li>
+                            <a href="<?php echo site_url('home/my_messages/read_message/'.$row['message_thread_code']); ?>" >
+                                <li style="background: #F7F8FA; border:none; border-bottom: 1px solid gray;" class="shadow">
                                     <div class="message-sender-wrap">
                                         <div class="message-sender-head clearfix">
                                             <div class="message-sender-info d-inline-block">

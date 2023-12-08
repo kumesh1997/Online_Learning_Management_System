@@ -29,10 +29,10 @@ foreach ($my_courses as $my_course) {
 
 <section class="my-courses-area">
     <div class="container">
-        <div class="row align-items-baseline">
-             <!-- Search Bar -->
-             <div class="col-lg-8" style="width: 100%">
-                <div class="my-course-search-bar">
+        <div class="row">
+            <!-- Search Bar -->
+            <div class="" style="width: 80%; margin-bottom:5%">
+                <div class="">
                     <form action="">
                         <div class="input-group">
                             <input type="text" class="form-control" style="border-radius: 40px 0px 0px 40px" placeholder="<?php echo get_phrase('search_my_courses'); ?>" onkeyup="getCoursesBySearchString(this.value)">
@@ -44,7 +44,8 @@ foreach ($my_courses as $my_course) {
                 </div>
             </div>
             <hr>
-
+        </div>
+        <div class="row align-items-baseline">
             <div class="col-lg-6">
                 <div class="my-course-filter-bar filter-box" >
                     <span><?php echo get_phrase('filter_by'); ?></span>

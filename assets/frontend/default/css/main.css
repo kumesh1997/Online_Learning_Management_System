@@ -4183,3 +4183,12 @@ div.tagsinput span.tag a {
 .quiz-options label {
   color: #3a3a3a;
 }
+
+.message-sender-list .shadow {
+    transition: box-shadow 0.3s ease-in-out;
+    /* box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.3) */
+}
+
+.message-sender-list .shadow:focus-within {
+    box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.3)
+}
