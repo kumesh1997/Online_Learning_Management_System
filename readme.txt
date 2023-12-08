@@ -1,7 +1,3 @@
-Free Download Source Code "Online Learning Management System"
-
-FIRST Download
-
 1.XAMPP
 
 2."TEXT EDITOR" NOTEPAD++ OR SUBLIME TEXT 3 / ETC.
