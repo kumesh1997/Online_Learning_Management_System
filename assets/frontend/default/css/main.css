@@ -3971,28 +3971,35 @@ section.purchase-history-list-area {
 
 
 
-.footer-area{
-    background-color: #fff;
-    padding: 30px 0;
+.footer-area {
+    background-color: #29303b;
+    padding: 20px 0;
     border-bottom: 6px solid #57B9FF;
     border-top: 1px solid #e8e9eb;
+    color: white; /* Set text color to black */
 }
-.copyright-text{
-    color: #686f7a;
+
+.footer-area .copyright-text {
     font-size: 13px;
     margin-bottom: 0;
+    margin-left: 100px;
+    color: white; /* Set text color to black */
 }
-.copyright-text img{
-    margin-right: 20px
-}
-.footer-menu .nav-item:not(:last-child){
+
+.footer-area .copyright-text img {
     margin-right: 20px;
-    
 }
-.footer-menu .nav-link{
+
+.footer-menu .nav-item:not(:last-child) {
+    margin-right: 20px;
+}
+
+.footer-menu .nav-link {
     padding: 6px 0;
     font-size: 13px;
+    color: white; /* Set text color to black */
 }
+
 
 
 
