@@ -1,7 +1,7 @@
 <div class="row ">
 	<div class="col-xl-12">
 		<div class="card">
-			<div class="card-body">
+			<div class="card-body" style="background-color: #313A46; color: white;">
 				<h4 class="page-title"> <i class="mdi mdi-apple-keyboard-command title_icon"></i> <?php echo get_phrase('manage_profile'); ?></h4>
 			</div> <!-- end card body-->
 		</div> <!-- end card -->
@@ -9,10 +9,11 @@
 </div>
 
 <div class="row ">
-	<div class="col-xl-7">
+	<div class="col-xl-6">
 		<div class="card">
-			<div class="card-body">
+			<div class="card-body" style="background-color: #313A46; color: white;">
 				<h4 class="header-title mb-3"><?php echo get_phrase('basic_info'); ?></h4>
+				<hr>
 				<?php
 				foreach($edit_data as $row):
 					$social_links = json_decode($row['social_links'], true);?>
@@ -87,9 +88,13 @@
 	</div> <!-- end card body-->
 </div> <!-- end card -->
 </div>
-<div class="col-xl-5">
+
+<!-- Change Password -->
+<div class="col-xl-6">
 	<div class="card">
-		<div class="card-body">
+		<div class="card-body" style="background-color: #313A46; color: white;">
+		<h4 class="header-title mb-3"><?php echo get_phrase('change_password'); ?></h4>
+		<hr>
 			<?php foreach($edit_data as $row): ?>
 				<?php echo form_open(site_url('admin/manage_profile/change_password/'.$row['id']) , array('class' => 'form-horizontal form-groups-bordered validate','target'=>'_top'));?>
 				<div class="form-group">

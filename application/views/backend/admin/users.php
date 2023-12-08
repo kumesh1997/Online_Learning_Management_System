@@ -1,7 +1,7 @@
 <div class="row ">
     <div class="col-xl-12">
         <div class="card" style="background-color: #313A46; color: white;">
-            <div class="card-body">
+            <div class="card-body" >
                 <h4 class="page-title"> <i class="mdi mdi-apple-keyboard-command title_icon"></i> <?php echo $page_title; ?>
                 <a href = "<?php echo site_url('admin/user_form/add_user_form'); ?>" class="btn btn-primary btn-rounded alignToTitle"><i class="mdi mdi-plus"></i><?php echo get_phrase('add_student'); ?></a>
             </h4>

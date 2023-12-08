@@ -234,6 +234,7 @@
     "student_add": "Student add",
     "student_add_form": "Student add form",
     "basic_info": "Basic info",
+    "change_password" : "Change password",
     "login_credentials": "Login credentials",
     "social_information": "Social information",
     "payment_info": "Payment info",

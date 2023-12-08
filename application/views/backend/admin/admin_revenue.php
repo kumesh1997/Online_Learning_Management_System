@@ -1,7 +1,7 @@
 <div class="row ">
     <div class="col-xl-12">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body" style="background-color: #313A46; color: white;">
                 <h4 class="page-title"> <i class="mdi mdi-apple-keyboard-command title_icon"></i> <?php echo get_phrase('admin_revenue'); ?></h4>
             </div> <!-- end card body-->
         </div> <!-- end card -->
@@ -11,7 +11,7 @@
 <div class="row">
     <div class="col-xl-12">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body" style="background-color: #313A46; color: white;">
                 <h4 class="mb-3 header-title"><?php echo get_phrase('admin_revenue'); ?></h4>
                 <div class="row justify-content-md-center">
                     <div class="col-xl-6">
@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class="table-responsive-sm mt-4">
-                    <table class="table table-striped table-centered mb-0">
+                    <table class="table table-dark table-centered mb-0">
                         <thead>
                             <tr>
                                 <th><?php echo get_phrase('enrolled_course'); ?></th>

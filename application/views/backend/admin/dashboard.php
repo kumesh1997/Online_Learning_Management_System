@@ -8,7 +8,7 @@
 <div class="row">
     <div class="col-xl-12">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body" style="background-color: #313A46; color: white;">
                 <h4 class="page-title"> <i class="mdi mdi-apple-keyboard-command title_icon"></i> <?php echo get_phrase('dashboard'); ?></h4>
             </div> <!-- end card body-->
         </div> <!-- end card -->
@@ -18,7 +18,7 @@
 <div class="row">
     <div class="col-xl-12">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body" style="background-color: #313A46; color: white;">
 
                 <h4 class="header-title mb-4"><?php echo get_phrase('admin_revenue_this_year'); ?></h4>
 
@@ -33,11 +33,11 @@
 <div class="row">
     <div class="col-12">
         <div class="card widget-inline">
-            <div class="card-body p-0">
+            <div class="card-body p-0" >
                 <div class="row no-gutters">
-                    <div class="col-sm-6 col-xl-3">
+                    <div class="col-sm-6 col-xl-3" >
                         <a href="<?php echo site_url('admin/courses'); ?>" class="text-secondary">
-                            <div class="card shadow-none m-0">
+                            <div class="card shadow-none m-0" style="background-color: #313A46; color: white;">
                                 <div class="card-body text-center">
                                     <i class="dripicons-archive text-muted" style="font-size: 24px;"></i>
                                     <h3><span><?php echo $number_of_courses; ?></span></h3>
@@ -49,7 +49,7 @@
 
                     <div class="col-sm-6 col-xl-3">
                         <a href="<?php echo site_url('admin/courses'); ?>" class="text-secondary">
-                            <div class="card shadow-none m-0 border-left">
+                            <div class="card shadow-none m-0 border-left" style="background-color: #313A46; color: white;">
                                 <div class="card-body text-center">
                                     <i class="dripicons-camcorder text-muted" style="font-size: 24px;"></i>
                                     <h3><span><?php echo $number_of_lessons; ?></span></h3>
@@ -61,7 +61,7 @@
 
                     <div class="col-sm-6 col-xl-3">
                         <a href="<?php echo site_url('admin/enrol_history'); ?>" class="text-secondary">
-                            <div class="card shadow-none m-0 border-left">
+                            <div class="card shadow-none m-0 border-left" style="background-color: #313A46; color: white;">
                                 <div class="card-body text-center">
                                     <i class="dripicons-network-3 text-muted" style="font-size: 24px;"></i>
                                     <h3><span><?php echo $number_of_enrolment; ?></span></h3>
@@ -73,7 +73,7 @@
 
                     <div class="col-sm-6 col-xl-3">
                         <a href="<?php echo site_url('admin/users'); ?>" class="text-secondary">
-                            <div class="card shadow-none m-0 border-left">
+                            <div class="card shadow-none m-0 border-left" style="background-color: #313A46; color: white;">
                                 <div class="card-body text-center">
                                     <i class="dripicons-user-group text-muted" style="font-size: 24px;"></i>
                                     <h3><span><?php echo $number_of_students; ?></span></h3>
@@ -91,7 +91,7 @@
 <div class="row">
     <div class="col-xl-4">
         <div class="card">
-            <div class="card-body">
+            <div class="card-body" style="background-color: #313A46; color: white;">
                 <h4 class="header-title mb-4"><?php echo get_phrase('course_overview'); ?></h4>
                 <div class="my-4 chartjs-chart" style="height: 202px;">
                     <canvas id="project-status-chart"></canvas>
@@ -117,7 +117,7 @@
     </div>
     <div class="col-xl-8">
         <div class="card" id = 'unpaid-instructor-revenue'>
-            <div class="card-body">
+            <div class="card-body" style="background-color: #313A46; color: white;">
                 <h4 class="header-title mb-3"><?php echo get_phrase('unpaid_instructor_revenues'); ?>
                     <a href="<?php echo site_url('admin/instructor_revenue'); ?>" class="alignToTitle" id ="go-to-instructor-revenue"> <i class="mdi mdi-logout"></i> </a>
                 </h4>

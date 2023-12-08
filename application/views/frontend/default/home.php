@@ -62,7 +62,7 @@
             <div class="col">
                 <!-- Content -->
                 <div class="home-banner-wrap">
-                    <h2 class="typewrite" data-period="2000" data-type='[ "<?php echo get_frontend_settings('banner_title'); ?>...", "Learn Anytime, Anywhere", "Smart Learning, Your Way"]'></h2>
+                    <h2 class="typewrite" data-period="1000" data-type='[ "<?php echo get_frontend_settings('banner_title'); ?>...", "Learn Anytime, Anywhere", "Smart Learning, Your Way"]'></h2>
                     <p style="color: yellow"><?php echo get_frontend_settings('banner_sub_title'); ?></p>
                 </div>
                 <div class="container-lg home-fact">
