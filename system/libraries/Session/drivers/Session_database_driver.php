@@ -1,51 +1,8 @@
 <?php
-/**
- * CodeIgniter
- *
- * An open source application development framework for PHP
- *
- * This content is released under the MIT License (MIT)
- *
- * Copyright (c) 2014 - 2018, British Columbia Institute of Technology
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- *
- * @package	CodeIgniter
- * @author	EllisLab Dev Team
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
- * @copyright	Copyright (c) 2014 - 2018, British Columbia Institute of Technology (http://bcit.ca/)
- * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	https://codeigniter.com
- * @since	Version 3.0.0
- * @filesource
- */
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-/**
- * CodeIgniter Session Database Driver
- *
- * @package	CodeIgniter
- * @subpackage	Libraries
- * @category	Sessions
- * @author	Andrey Andreev
- * @link	https://codeigniter.com/user_guide/libraries/sessions.html
- */
+
 class CI_Session_database_driver extends CI_Session_driver implements SessionHandlerInterface {
 
 	/**
@@ -62,21 +19,9 @@ class CI_Session_database_driver extends CI_Session_driver implements SessionHan
 	 */
 	protected $_row_exists = FALSE;
 
-	/**
-	 * Lock "driver" flag
-	 *
-	 * @var	string
-	 */
+	
 	protected $_platform;
 
-	// ------------------------------------------------------------------------
-
-	/**
-	 * Class constructor
-	 *
-	 * @param	array	$params	Configuration parameters
-	 * @return	void
-	 */
 	public function __construct(&$params)
 	{
 		parent::__construct($params);
@@ -115,17 +60,7 @@ class CI_Session_database_driver extends CI_Session_driver implements SessionHan
 		}
 	}
 
-	// ------------------------------------------------------------------------
 
-	/**
-	 * Open
-	 *
-	 * Initializes the database connection
-	 *
-	 * @param	string	$save_path	Table name
-	 * @param	string	$name		Session cookie name, unused
-	 * @return	bool
-	 */
 	public function open($save_path, $name)
 	{
 		if (empty($this->_db->conn_id) && ! $this->_db->db_connect())
@@ -138,16 +73,7 @@ class CI_Session_database_driver extends CI_Session_driver implements SessionHan
 		return $this->_success;
 	}
 
-	// ------------------------------------------------------------------------
-
-	/**
-	 * Read
-	 *
-	 * Reads session data and acquires a lock
-	 *
-	 * @param	string	$session_id	Session ID
-	 * @return	string	Serialized session data
-	 */
+	
 	public function read($session_id)
 	{
 		if ($this->_get_lock($session_id) !== FALSE)
@@ -170,17 +96,13 @@ class CI_Session_database_driver extends CI_Session_driver implements SessionHan
 
 			if ( ! ($result = $this->_db->get()) OR ($result = $result->row()) === NULL)
 			{
-				// PHP7 will reuse the same SessionHandler object after
-				// ID regeneration, so we need to explicitly set this to
-				// FALSE instead of relying on the default ...
+				
 				$this->_row_exists = FALSE;
 				$this->_fingerprint = md5('');
 				return '';
 			}
 
-			// PostgreSQL's variant of a BLOB datatype is Bytea, which is a
-			// PITA to work with, so we use base64-encoded data in a TEXT
-			// field instead.
+			
 			$result = ($this->_platform === 'postgre')
 				? base64_decode(rtrim($result->data))
 				: $result->data;
@@ -194,17 +116,6 @@ class CI_Session_database_driver extends CI_Session_driver implements SessionHan
 		return '';
 	}
 
-	// ------------------------------------------------------------------------
-
-	/**
-	 * Write
-	 *
-	 * Writes (create / update) session data
-	 *
-	 * @param	string	$session_id	Session ID
-	 * @param	string	$session_data	Serialized session data
-	 * @return	bool
-	 */
 	public function write($session_id, $session_data)
 	{
 		// Prevent previous QB calls from messing with our queries
@@ -268,15 +179,7 @@ class CI_Session_database_driver extends CI_Session_driver implements SessionHan
 		return $this->_fail();
 	}
 
-	// ------------------------------------------------------------------------
 
-	/**
-	 * Close
-	 *
-	 * Releases locks
-	 *
-	 * @return	bool
-	 */
 	public function close()
 	{
 		return ($this->_lock && ! $this->_release_lock())
@@ -284,16 +187,7 @@ class CI_Session_database_driver extends CI_Session_driver implements SessionHan
 			: $this->_success;
 	}
 
-	// ------------------------------------------------------------------------
 
-	/**
-	 * Destroy
-	 *
-	 * Destroys the current session.
-	 *
-	 * @param	string	$session_id	Session ID
-	 * @return	bool
-	 */
 	public function destroy($session_id)
 	{
 		if ($this->_lock)
@@ -322,16 +216,7 @@ class CI_Session_database_driver extends CI_Session_driver implements SessionHan
 		return $this->_fail();
 	}
 
-	// ------------------------------------------------------------------------
 
-	/**
-	 * Garbage Collector
-	 *
-	 * Deletes expired sessions
-	 *
-	 * @param	int 	$maxlifetime	Maximum lifetime of sessions
-	 * @return	bool
-	 */
 	public function gc($maxlifetime)
 	{
 		// Prevent previous QB calls from messing with our queries
@@ -342,17 +227,7 @@ class CI_Session_database_driver extends CI_Session_driver implements SessionHan
 			: $this->_fail();
 	}
 
-	// --------------------------------------------------------------------
 
-	/**
-	 * Validate ID
-	 *
-	 * Checks whether a session ID record exists server-side,
-	 * to enforce session.use_strict_mode.
-	 *
-	 * @param	string	$id
-	 * @return	bool
-	 */
 	public function validateId($id)
 	{
 		// Prevent previous QB calls from messing with our queries
@@ -366,16 +241,7 @@ class CI_Session_database_driver extends CI_Session_driver implements SessionHan
 		return ! empty($result);
 	}
 
-	// ------------------------------------------------------------------------
 
-	/**
-	 * Get lock
-	 *
-	 * Acquires a lock, depending on the underlying platform.
-	 *
-	 * @param	string	$session_id	Session ID
-	 * @return	bool
-	 */
 	protected function _get_lock($session_id)
 	{
 		if ($this->_platform === 'mysql')
@@ -404,15 +270,7 @@ class CI_Session_database_driver extends CI_Session_driver implements SessionHan
 		return parent::_get_lock($session_id);
 	}
 
-	// ------------------------------------------------------------------------
 
-	/**
-	 * Release lock
-	 *
-	 * Releases a previously acquired lock
-	 *
-	 * @return	bool
-	 */
 	protected function _release_lock()
 	{
 		if ( ! $this->_lock)
