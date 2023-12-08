@@ -9,7 +9,7 @@
 </div>
 <div class="row">
     <div class="col-xl-12">
-        <div class="card">
+        <div class="card" style="background-color: #313A46; color: white;">
             <div class="card-body" >
 
                 <h4 class="header-title mb-3"><?php echo get_phrase('student_add_form'); ?></h4>

@@ -11,7 +11,7 @@
 
 <div class="row justify-content-center">
     <div class="col-xl-7">
-        <div class="card">
+        <div class="card" style="background-color: #313A46; color: white;">
             <div class="card-body">
               <div class="col-lg-12">
                 <h4 class="mb-3 header-title"><?php echo get_phrase('enrolment_form'); ?></h4>
@@ -42,7 +42,7 @@
                         </select>
                     </div>
 
-                    <button type="button" class="btn btn-primary" onclick="checkRequiredFields()"><?php echo get_phrase('enrol_student'); ?></button>
+                    <button type="button" style="display: block; margin: 0 auto;" class="btn btn-primary" onclick="checkRequiredFields()"><?php echo get_phrase('enrol_student'); ?></button>
                 </form>
               </div>
             </div> <!-- end card body-->
