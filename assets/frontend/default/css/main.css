@@ -19,6 +19,7 @@ body{
     padding-right: 0 !important;
     color: #29303b;
     font-size: 15px;
+    margin:0;
 }
 body.white-bg{
     background: #fff;

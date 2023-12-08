@@ -30,15 +30,30 @@ foreach ($my_courses as $my_course) {
 <section class="my-courses-area">
     <div class="container">
         <div class="row align-items-baseline">
+             <!-- Search Bar -->
+             <div class="col-lg-8" style="width: 100%">
+                <div class="my-course-search-bar">
+                    <form action="">
+                        <div class="input-group">
+                            <input type="text" class="form-control" style="border-radius: 40px 0px 0px 40px" placeholder="<?php echo get_phrase('search_my_courses'); ?>" onkeyup="getCoursesBySearchString(this.value)">
+                            <div class="input-group-append">
+                                <button style="border-radius: 0px 40px 40px 0px" class="btn" type="submit"><i class="fas fa-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr>
+
             <div class="col-lg-6">
-                <div class="my-course-filter-bar filter-box">
+                <div class="my-course-filter-bar filter-box" >
                     <span><?php echo get_phrase('filter_by'); ?></span>
-                    <div class="btn-group">
+                    <div class="btn-group" >
                         <a class="btn btn-outline-secondary dropdown-toggle all-btn" href="#"data-toggle="dropdown">
                             <?php echo get_phrase('categories'); ?>
                         </a>
 
-                        <div class="dropdown-menu">
+                        <div class="dropdown-menu" >
                             <?php foreach ($categories as $category):
                                 $category_details = $this->crud_model->get_categories($category)->row_array();
                                 ?>
@@ -61,18 +76,7 @@ foreach ($my_courses as $my_course) {
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="my-course-search-bar">
-                    <form action="">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="<?php echo get_phrase('search_my_courses'); ?>" onkeyup="getCoursesBySearchString(this.value)">
-                            <div class="input-group-append">
-                                <button class="btn" type="submit"><i class="fas fa-search"></i></button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+           
         </div>
         <div class="row no-gutters" id = "my_courses_area">
             <?php foreach ($my_courses as $my_course):
@@ -110,7 +114,7 @@ foreach ($my_courses as $my_course) {
                                         </p>
                                     </div>
                                 </div>
-                                <div class="row" style="padding: 5px;">
+                                <div class="row" style="padding: 4px;">
                                     <div class="col-md-6">
                                         <a href="<?php echo site_url('home/course/'.slugify($course_details['title']).'/'.$my_course['course_id']); ?>" class="btn"><?php echo get_phrase('course_detail'); ?></a>
                                     </div>
