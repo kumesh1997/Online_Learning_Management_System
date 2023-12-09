@@ -2,7 +2,7 @@
 $total_price = 0;
 ?>
 <div class="icon">
-	<a href="javascript::" onclick="showCartPage()"><i class="fas fa-shopping-cart"></i></a>
+	<a href="javascript::" onclick="showCartPage()"><i class="fas fa-shopping-basket"></i></a>
 	<span class="number"><?php echo sizeof($this->session->userdata('cart_items')); ?></span>
 </div>
 
