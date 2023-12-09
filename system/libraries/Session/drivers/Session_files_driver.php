@@ -1,51 +1,8 @@
 <?php
-/**
- * CodeIgniter
- *
- * An open source application development framework for PHP
- *
- * This content is released under the MIT License (MIT)
- *
- * Copyright (c) 2014 - 2018, British Columbia Institute of Technology
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- *
- * @package	CodeIgniter
- * @author	EllisLab Dev Team
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
- * @copyright	Copyright (c) 2014 - 2018, British Columbia Institute of Technology (http://bcit.ca/)
- * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	https://codeigniter.com
- * @since	Version 3.0.0
- * @filesource
-*/
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-/**
- * CodeIgniter Session Files Driver
- *
- * @package	CodeIgniter
- * @subpackage	Libraries
- * @category	Sessions
- * @author	Andrey Andreev
- * @link	https://codeigniter.com/user_guide/libraries/sessions.html
- */
+
 class CI_Session_files_driver extends CI_Session_driver implements SessionHandlerInterface {
 
 	/**
@@ -118,17 +75,7 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 		isset(self::$func_overload) OR self::$func_overload = (extension_loaded('mbstring') && ini_get('mbstring.func_overload'));
 	}
 
-	// ------------------------------------------------------------------------
-
-	/**
-	 * Open
-	 *
-	 * Sanitizes the save_path directory.
-	 *
-	 * @param	string	$save_path	Path to session files' directory
-	 * @param	string	$name		Session cookie name
-	 * @return	bool
-	 */
+	
 	public function open($save_path, $name)
 	{
 		if ( ! is_dir($save_path))
@@ -153,20 +100,10 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 		return $this->_success;
 	}
 
-	// ------------------------------------------------------------------------
 
-	/**
-	 * Read
-	 *
-	 * Reads session data and acquires a lock
-	 *
-	 * @param	string	$session_id	Session ID
-	 * @return	string	Serialized session data
-	 */
 	public function read($session_id)
 	{
-		// This might seem weird, but PHP 5.6 introduces session_reset(),
-		// which re-reads session data
+		
 		if ($this->_file_handle === NULL)
 		{
 			$this->_file_new = ! file_exists($this->_file_path.$session_id);
@@ -185,7 +122,7 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 				return $this->_failure;
 			}
 
-			// Needed by write() to detect session_regenerate_id() calls
+			
 			$this->_session_id = $session_id;
 
 			if ($this->_file_new)
@@ -195,8 +132,7 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 				return '';
 			}
 		}
-		// We shouldn't need this, but apparently we do ...
-		// See https://github.com/bcit-ci/CodeIgniter/issues/4039
+		
 		elseif ($this->_file_handle === FALSE)
 		{
 			return $this->_failure;
@@ -221,21 +157,10 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 		return $session_data;
 	}
 
-	// ------------------------------------------------------------------------
-
-	/**
-	 * Write
-	 *
-	 * Writes (create / update) session data
-	 *
-	 * @param	string	$session_id	Session ID
-	 * @param	string	$session_data	Serialized session data
-	 * @return	bool
-	 */
+	
 	public function write($session_id, $session_data)
 	{
-		// If the two IDs don't match, we have a session_regenerate_id() call
-		// and we need to close the old handle and open a new one
+		
 		if ($session_id !== $this->_session_id && ($this->close() === $this->_failure OR $this->read($session_id) === $this->_failure))
 		{
 			return $this->_failure;
@@ -280,15 +205,7 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 		return $this->_success;
 	}
 
-	// ------------------------------------------------------------------------
 
-	/**
-	 * Close
-	 *
-	 * Releases locks and closes file descriptor.
-	 *
-	 * @return	bool
-	 */
 	public function close()
 	{
 		if (is_resource($this->_file_handle))
@@ -302,16 +219,7 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 		return $this->_success;
 	}
 
-	// ------------------------------------------------------------------------
-
-	/**
-	 * Destroy
-	 *
-	 * Destroys the current session.
-	 *
-	 * @param	string	$session_id	Session ID
-	 * @return	bool
-	 */
+	
 	public function destroy($session_id)
 	{
 		if ($this->close() === $this->_success)
@@ -343,16 +251,7 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 		return $this->_failure;
 	}
 
-	// ------------------------------------------------------------------------
 
-	/**
-	 * Garbage Collector
-	 *
-	 * Deletes expired sessions
-	 *
-	 * @param	int 	$maxlifetime	Maximum lifetime of sessions
-	 * @return	bool
-	 */
 	public function gc($maxlifetime)
 	{
 		if ( ! is_dir($this->_config['save_path']) OR ($directory = opendir($this->_config['save_path'])) === FALSE)
@@ -391,30 +290,13 @@ class CI_Session_files_driver extends CI_Session_driver implements SessionHandle
 		return $this->_success;
 	}
 
-	// --------------------------------------------------------------------
 
-	/**
-	 * Validate ID
-	 *
-	 * Checks whether a session ID record exists server-side,
-	 * to enforce session.use_strict_mode.
-	 *
-	 * @param	string	$id
-	 * @return	bool
-	 */
 	public function validateId($id)
 	{
 		return is_file($this->_file_path.$id);
 	}
 
-	// --------------------------------------------------------------------
-
-	/**
-	 * Byte-safe strlen()
-	 *
-	 * @param	string	$str
-	 * @return	int
-	 */
+	
 	protected static function strlen($str)
 	{
 		return (self::$func_overload)

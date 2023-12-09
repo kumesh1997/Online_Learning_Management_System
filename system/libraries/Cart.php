@@ -1,101 +1,24 @@
 <?php
-/**
- * CodeIgniter
- *
- * An open source application development framework for PHP
- *
- * This content is released under the MIT License (MIT)
- *
- * Copyright (c) 2014 - 2018, British Columbia Institute of Technology
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- *
- * @package	CodeIgniter
- * @author	EllisLab Dev Team
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
- * @copyright	Copyright (c) 2014 - 2018, British Columbia Institute of Technology (http://bcit.ca/)
- * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	https://codeigniter.com
- * @since	Version 1.0.0
- * @filesource
- */
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-/**
- * Shopping Cart Class
- *
- * @package		CodeIgniter
- * @subpackage	Libraries
- * @category	Shopping Cart
- * @author		EllisLab Dev Team
- * @link		https://codeigniter.com/user_guide/libraries/cart.html
- * @deprecated	3.0.0	This class is too specific for CI.
- */
+
 class CI_Cart {
 
-	/**
-	 * These are the regular expression rules that we use to validate the product ID and product name
-	 * alpha-numeric, dashes, underscores, or periods
-	 *
-	 * @var string
-	 */
+	
 	public $product_id_rules = '\.a-z0-9_-';
 
-	/**
-	 * These are the regular expression rules that we use to validate the product ID and product name
-	 * alpha-numeric, dashes, underscores, colons or periods
-	 *
-	 * @var string
-	 */
+	
 	public $product_name_rules = '\w \-\.\:';
 
-	/**
-	 * only allow safe product names
-	 *
-	 * @var bool
-	 */
 	public $product_name_safe = TRUE;
 
-	// --------------------------------------------------------------------------
-
-	/**
-	 * Reference to CodeIgniter instance
-	 *
-	 * @var object
-	 */
+	
 	protected $CI;
 
-	/**
-	 * Contents of the cart
-	 *
-	 * @var array
-	 */
 	protected $_cart_contents = array();
 
-	/**
-	 * Shopping Class Constructor
-	 *
-	 * The constructor loads the Session class, used to store the shopping cart contents.
-	 *
-	 * @param	array
-	 * @return	void
-	 */
+
 	public function __construct($params = array())
 	{
 		// Set the super object to a local variable for use later
@@ -134,12 +57,6 @@ class CI_Cart {
 			log_message('error', 'The insert method must be passed an array containing data.');
 			return FALSE;
 		}
-
-		// You can either insert a single product using a one-dimensional array,
-		// or multiple products using a multi-dimensional one. The way we
-		// determine the array type is by looking for a required array key named "id"
-		// at the top level. If it's not found, we will assume it's a multi-dimensional array.
-
 		$save_cart = FALSE;
 		if (isset($items['id']))
 		{
@@ -209,21 +126,13 @@ class CI_Cart {
 			return FALSE;
 		}
 
-		// --------------------------------------------------------------------
-
-		// Validate the product ID. It can only be alpha-numeric, dashes, underscores or periods
-		// Not totally sure we should impose this rule, but it seems prudent to standardize IDs.
-		// Note: These can be user-specified by setting the $this->product_id_rules variable.
+		
 		if ( ! preg_match('/^['.$this->product_id_rules.']+$/i', $items['id']))
 		{
 			log_message('error', 'Invalid product ID.  The product ID can only contain alpha-numeric characters, dashes, and underscores');
 			return FALSE;
 		}
 
-		// --------------------------------------------------------------------
-
-		// Validate the product name. It can only be alpha-numeric, dashes, underscores, colons or periods.
-		// Note: These can be user-specified by setting the $this->product_name_rules variable.
 		if ($this->product_name_safe && ! preg_match('/^['.$this->product_name_rules.']+$/i'.(UTF8_ENABLED ? 'u' : ''), $items['name']))
 		{
 			log_message('error', 'An invalid name was submitted as the product name: '.$items['name'].' The name can only contain alpha-numeric characters, dashes, underscores, colons, and spaces');
@@ -235,32 +144,18 @@ class CI_Cart {
 		// Prep the price. Remove leading zeros and anything that isn't a number or decimal point.
 		$items['price'] = (float) $items['price'];
 
-		// We now need to create a unique identifier for the item being inserted into the cart.
-		// Every time something is added to the cart it is stored in the master cart array.
-		// Each row in the cart array, however, must have a unique index that identifies not only
-		// a particular product, but makes it possible to store identical products with different options.
-		// For example, what if someone buys two identical t-shirts (same product ID), but in
-		// different sizes?  The product ID (and other attributes, like the name) will be identical for
-		// both sizes because it's the same shirt. The only difference will be the size.
-		// Internally, we need to treat identical submissions, but with different options, as a unique product.
-		// Our solution is to convert the options array to a string and MD5 it along with the product ID.
-		// This becomes the unique "row ID"
+	
 		if (isset($items['options']) && count($items['options']) > 0)
 		{
 			$rowid = md5($items['id'].serialize($items['options']));
 		}
 		else
 		{
-			// No options were submitted so we simply MD5 the product ID.
-			// Technically, we don't need to MD5 the ID in this case, but it makes
-			// sense to standardize the format of array indexes for both conditions
+		
 			$rowid = md5($items['id']);
 		}
 
-		// --------------------------------------------------------------------
-
-		// Now that we have our unique "row ID", we'll add our cart items to the master array
-		// grab quantity if it's already there and add it on
+	
 		$old_quantity = isset($this->_cart_contents[$rowid]['qty']) ? (int) $this->_cart_contents[$rowid]['qty'] : 0;
 
 		// Re-create the entry, just to make sure our index contains only the data from this submission
@@ -271,19 +166,7 @@ class CI_Cart {
 		return $rowid;
 	}
 
-	// --------------------------------------------------------------------
 
-	/**
-	 * Update the cart
-	 *
-	 * This function permits the quantity of a given item to be changed.
-	 * Typically it is called from the "view cart" page if a user makes
-	 * changes to the quantity before checkout. That array must contain the
-	 * product ID and quantity for each item.
-	 *
-	 * @param	array
-	 * @return	bool
-	 */
 	public function update($items = array())
 	{
 		// Was any cart data passed?
@@ -292,10 +175,7 @@ class CI_Cart {
 			return FALSE;
 		}
 
-		// You can either update a single product using a one-dimensional array,
-		// or multiple products using a multi-dimensional one.  The way we
-		// determine the array type is by looking for a required array key named "rowid".
-		// If it's not found we assume it's a multi-dimensional array
+		
 		$save_cart = FALSE;
 		if (isset($items['rowid']))
 		{
@@ -328,19 +208,7 @@ class CI_Cart {
 		return FALSE;
 	}
 
-	// --------------------------------------------------------------------
 
-	/**
-	 * Update the cart
-	 *
-	 * This function permits changing item properties.
-	 * Typically it is called from the "view cart" page if a user makes
-	 * changes to the quantity before checkout. That array must contain the
-	 * rowid and quantity for each item.
-	 *
-	 * @param	array
-	 * @return	bool
-	 */
 	protected function _update($items = array())
 	{
 		// Without these array indexes there is nothing we can do
@@ -379,13 +247,7 @@ class CI_Cart {
 		return TRUE;
 	}
 
-	// --------------------------------------------------------------------
 
-	/**
-	 * Save the cart array to the session DB
-	 *
-	 * @return	bool
-	 */
 	protected function _save_cart()
 	{
 		// Let's add up the individual prices and set the cart sub-total
@@ -420,13 +282,6 @@ class CI_Cart {
 		return TRUE;
 	}
 
-	// --------------------------------------------------------------------
-
-	/**
-	 * Cart Total
-	 *
-	 * @return	int
-	 */
 	public function total()
 	{
 		return $this->_cart_contents['cart_total'];

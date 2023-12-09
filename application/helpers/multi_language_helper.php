@@ -1,20 +1,4 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/**
-* CodeIgniter
-*
-* An open source application development framework for PHP 5.1.6 or newer
-*
-* @package		CodeIgniter
-* @author		ExpressionEngine Dev Team
-* @copyright	Copyright (c) 2008 - 2011, EllisLab, Inc.
-* @license		http://codeigniter.com/user_guide/license.html
-* @link		http://codeigniter.com
-* @since		Version 1.0
-* @filesource
-*/
-
-
-// This function helps us to get the translated phrase from the file. If it does not exist this function will save the phrase and by default it will have the same form as given
 if ( ! function_exists('get_phrase'))
 {
 	function get_phrase($phrase = '') {
@@ -35,7 +19,6 @@ if ( ! function_exists('get_phrase'))
 	}
 }
 
-// This function helps us to decode the language json and return that array to us
 if ( ! function_exists('openJSONFile'))
 {
 	function openJSONFile($code)
@@ -49,7 +32,6 @@ if ( ! function_exists('openJSONFile'))
 	}
 }
 
-// This function helps us to create a new json file for new language
 if ( ! function_exists('saveDefaultJSONFile'))
 {
 	function saveDefaultJSONFile($language_code){
@@ -68,7 +50,6 @@ if ( ! function_exists('saveDefaultJSONFile'))
 	}
 }
 
-// This function helps us to update a phrase inside the language file.
 if ( ! function_exists('saveJSONFile'))
 {
 	function saveJSONFile($language_code, $updating_key, $updating_value){
@@ -84,8 +65,3 @@ if ( ! function_exists('saveJSONFile'))
 		file_put_contents(APPPATH.'language/'.$language_code.'.json', stripslashes($jsonData));
 	}
 }
-
-
-// ------------------------------------------------------------------------
-/* End of file language_helper.php */
-/* Location: ./system/helpers/language_helper.php */
