@@ -1,11 +1,11 @@
 <?php
 $user_details = $this->user_model->get_user($this->session->userdata('user_id'))->row_array();
 ?>
-<section class="menu-area">
+<section class="menu-area" style="background-color: #e3f2fd;" >
     <div class="container-xl">
         <div class="row">
             <div class="col">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <nav class="navbar navbar-expand-lg " style="background-color: #e3f2fd;">
 
                     <ul class="mobile-header-buttons">
                         <li><a class="mobile-nav-trigger" href="#mobile-primary-nav">Menu<span></span></a></li>
