@@ -3,11 +3,19 @@
         <div class="card">
             <div class="card-body" style="background-color: #313A46; color: white;">
                 <h4 class="page-title"> <i class="mdi mdi-apple-keyboard-command title_icon"></i> <?php echo get_phrase('courses'); ?>
-                    <a href="<?php echo site_url('admin/course_form/add_course'); ?>" class="btn btn-primary btn-rounded alignToTitle"><i class="mdi mdi-clipboard-text"></i> <?php echo get_phrase('add_new_course'); ?></a>
+                    <!-- <a href="<?php echo site_url('admin/course_form/add_course'); ?>" class="btn btn-primary btn-rounded alignToTitle"><i class="mdi mdi-clipboard-text"></i> <?php echo get_phrase('add_new_course'); ?></a> -->
                 </h4>
             </div> 
         </div> 
     </div><!-- end col-->
+</div>
+<div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+  <a href="<?php echo site_url('admin/course_form/add_course'); ?>" style="text-decoration: none;">
+    <button type="button" class="btn btn-primary rounded-pill shadow-lg" style="width: 150px; height: 50px; background-color: #727cf5; border: none; display: flex; justify-content: space-between; align-items: center; padding: 10px 15px;">
+      <i class="fas fa-plus" style="font-size: 16px; color: #ffffff;"></i>
+      <span style="font-size: 16px; color: #ffffff; white-space: nowrap;">Add Course</span>
+    </button>
+  </a>
 </div>
 <div class="row" >
     <div class="col-12" >

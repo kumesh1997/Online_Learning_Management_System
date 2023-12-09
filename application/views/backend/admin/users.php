@@ -3,11 +3,22 @@
         <div class="card" style="background-color: #313A46; color: white;">
             <div class="card-body" >
                 <h4 class="page-title"> <i class="mdi mdi-apple-keyboard-command title_icon"></i> <?php echo $page_title; ?>
-                <a href = "<?php echo site_url('admin/user_form/add_user_form'); ?>" class="btn btn-primary btn-rounded alignToTitle"><i class="mdi mdi-plus"></i><?php echo get_phrase('add_student'); ?></a>
+                <!-- <a href = "<?php echo site_url('admin/user_form/add_user_form'); ?>" class="btn btn-primary btn-rounded alignToTitle"><i class="mdi mdi-plus"></i><?php echo get_phrase('add_student'); ?></a> -->
+                <!-- Secondary raised circle button with ripple effect -->
+
             </h4>
             </div> <!-- end card body-->
         </div> <!-- end card -->
     </div><!-- end col-->
+</div>
+
+<div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+  <a href="<?php echo site_url('admin/user_form/add_user_form'); ?>" style="text-decoration: none;">
+    <button type="button" class="btn btn-primary rounded-pill shadow-lg" style="width: 150px; height: 50px; background-color: #727cf5; border: none; display: flex; justify-content: space-between; align-items: center; padding: 10px 15px;">
+      <i class="fas fa-plus" style="font-size: 16px; color: #ffffff;"></i>
+      <span style="font-size: 16px; color: #ffffff; white-space: nowrap;">Add Student</span>
+    </button>
+  </a>
 </div>
 
 <div class="row">
