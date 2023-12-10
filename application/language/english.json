@@ -234,7 +234,7 @@
     "student_add": "Student add",
     "student_add_form": "Student add form",
     "basic_info": "Basic info",
-    "change_password" : "Change password",
+    "change_password": "Change password",
     "login_credentials": "Login credentials",
     "social_information": "Social information",
     "payment_info": "Payment info",
@@ -438,7 +438,6 @@
     "linkedin_link": "Linkedin link",
     "a_short_title_about_yourself": "A short title about yourself",
     "update_profile": "Update profile",
-    "change_password": "Change password",
     "current_password": "Current password",
     "new_password": "New password",
     "confirm_new_password": "Confirm new password",
@@ -654,5 +653,6 @@
     "welcom": "Welcom",
     "no_records_found": "No records found",
     "email_duplication": "Email duplication",
-    "upload": "Upload"
+    "upload": "Upload",
+    "navigations": "Navigations"
 }
