@@ -1,5 +1,4 @@
 <?php
-    //$param2 = question id and $param3 = quiz id
     $question_details = $this->crud_model->get_quiz_question_by_id($param2)->row_array();
     if ($question_details['options'] != "" || $question_details['options'] != null) {
         $options = json_decode($question_details['options']);

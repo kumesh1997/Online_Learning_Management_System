@@ -11,7 +11,6 @@
 </ol>
 <h2><i class="fa fa-arrow-circle-o-right"></i> <?php echo $page_title; ?></h2>
 <br />
-
 <div class="row">
 	<div class="col-md-8 col-md-offset-2">
 		<div class="panel panel-primary" data-collapsed="0">

@@ -1,5 +1,4 @@
 <?php
-    // $student_list = $this->crud_model->all_enrolled_student()->result_array();
     $student_list = $this->user_model->get_user()->result_array();
 ?>
 <div class="card">

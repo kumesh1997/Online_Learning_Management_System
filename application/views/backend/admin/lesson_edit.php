@@ -1,5 +1,4 @@
 <?php
-// $param2 = lesson id and $param3 = course id
     $lesson_details = $this->crud_model->get_lessons('lesson', $param2)->row_array();
     $sections = $this->crud_model->get_section('course', $param3)->result_array();
 ?>

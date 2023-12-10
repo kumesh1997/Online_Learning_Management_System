@@ -52,8 +52,8 @@
 	                    </div>
 	                </form>
 
-	            </div> <!-- end .chat-conversation-->
+	            </div>
 	        </div>
-	    </div> <!-- end card-->
-	</div> <!-- end col-->
+	    </div>
+	</div> 
 </div>

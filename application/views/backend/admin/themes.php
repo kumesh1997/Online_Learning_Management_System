@@ -8,7 +8,6 @@
     </div> <!-- end card -->
   </div><!-- end col-->
 </div>
-
 <!-- Start page title end -->
 <div class="row justify-content-center">
   <div class="col-xl-12">

@@ -14,8 +14,6 @@
         $paypal_keys = get_settings('paypal');
         $paypal = json_decode($paypal_keys);
     ?>
-    <!--required for getting the stripe token-->
-
     <img src="<?php echo base_url().'uploads/system/logo-light.png'; ?>" width="15%;"
     style="opacity: 0.05;">
 
@@ -34,12 +32,12 @@
 
     <script>
     paypal.Button.render({
-        env: '<?php echo $paypal[0]->mode;?>', // 'sandbox' or 'production'
+        env: '<?php echo $paypal[0]->mode;?>',
         style: {
             label: 'paypal',
-            size:  'medium',    // small | medium | large | responsive
-            shape: 'rect',     // pill | rect
-            color: 'blue',     // gold | blue | silver | black
+            size:  'medium', 
+            shape: 'rect',
+            color: 'blue', 
             tagline: false
         },
         client: {
@@ -47,7 +45,7 @@
             sandbox:    '<?php echo $production_client_id;?>'
         },
 
-        commit: true, // Show a 'Pay Now' button
+        commit: true,
 
         payment: function(data, actions) {
             return actions.payment.create({
@@ -62,9 +60,7 @@
         },
 
         onAuthorize: function(data, actions) {
-            // executes the payment
             return actions.payment.execute().then(function() {
-                // make an ajax call for saving the payment info
                 $.ajax({
                     url: '<?php echo site_url('admin/payment_success/paypal/'.$payment_id);?>'
                 }).done(function () {

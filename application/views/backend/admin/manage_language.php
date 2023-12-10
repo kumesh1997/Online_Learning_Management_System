@@ -41,7 +41,6 @@
 				</ul>
 
 				<div class="tab-content">
-					<!----PHRASE EDITING TAB STARTS-->
 					<?php if (isset($edit_profile)):
 						$current_editing_language	=	$edit_profile;
 					?>
@@ -65,9 +64,6 @@
 							</div>
 						</div>
 					<?php endif;?>
-					<!----PHRASE EDITING TAB ENDS-->
-
-					<!----TABLE LISTING STARTS-->
 					<div class="tab-pane <?php if(!isset($edit_profile))echo 'show active';?>" id="list">
 
 						<div class="table-responsive-sm">
@@ -100,9 +96,6 @@
 
 						</div>
 					</div>
-					<!----TABLE LISTING ENDS--->
-
-					<!----PHRASE CREATION FORM STARTS---->
 					<div class="tab-pane" id="add" style="padding: 30px">
 						<div class="row">
 							<div class="col-xl-6">
@@ -120,9 +113,6 @@
 							</div>
 						</div>
 					</div>
-					<!----PHRASE CREATION FORM ENDS--->
-
-					<!----ADD NEW LANGUAGE---->
 					<div class="tab-pane" id="add_lang" style="padding: 30px">
 						<div class="row">
 							<div class="col-xl-6">
@@ -140,8 +130,6 @@
 							</div>
 						</div>
 					</div>
-					<!----LANGUAGE ADDING FORM ENDS-->
-
 				</div>
 			</div>
 		</div>
