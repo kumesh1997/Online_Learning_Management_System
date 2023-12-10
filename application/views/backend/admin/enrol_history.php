@@ -22,11 +22,11 @@
                                       <i class="mdi mdi-calendar"></i>&nbsp;
                                       <span id="selectedValue"><?php echo date("F d, Y" , $timestamp_start) . " - " . date("F d, Y" , $timestamp_end);?></span> <i class="mdi mdi-menu-down"></i>
                                   </div>
-                                  <input id="date_range" type="hidden" name="date_range" value="<?php echo date("d F, Y" , $timestamp_start) . " - " . date("d F, Y" , $timestamp_end);?>">
+                                  <input id="date_range" style="border-radius: 40px" type="hidden" name="date_range" value="<?php echo date("d F, Y" , $timestamp_start) . " - " . date("d F, Y" , $timestamp_end);?>">
                               </div>
                           </div>
                           <div class="col-xl-2">
-                              <button type="submit" class="btn btn-info" id="submit-button" onclick="update_date_range();"> <?php echo get_phrase('filter');?></button>
+                              <button type="submit" style="border-radius: 40px" class="btn btn-info" id="submit-button" onclick="update_date_range();"> <?php echo get_phrase('filter');?></button>
                           </div>
                       </form>
                   </div>

@@ -26,7 +26,7 @@
                                 </div>
                             </div>
                             <div class="col-xl-2">
-                                <button type="submit" class="btn btn-info" id="submit-button" onclick="update_date_range();"> <?php echo get_phrase('filter');?></button>
+                                <button type="submit" style="border-radius: 40px" class="btn btn-info" id="submit-button" onclick="update_date_range();"> <?php echo get_phrase('filter');?></button>
                             </div>
                         </form>
                     </div>

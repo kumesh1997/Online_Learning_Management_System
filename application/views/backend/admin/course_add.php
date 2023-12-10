@@ -70,28 +70,32 @@
                                 <div class="tab-content b-0 mb-0">
                                     <div class="tab-pane" id="basic">
                                         <div class="row justify-content-center">
-                                            <div class="col-xl-8">
+                                            <!-- column 1 -->
+                                            <div class="col-xl-6">
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="course_title"><?php echo get_phrase('course_title'); ?> <span class="required">*</span> </label>
-                                                    <div class="col-md-10">
+                                                    <label class="col-md-4 col-form-label" for="course_title"><?php echo get_phrase('course_title'); ?> <span class="required">*</span> </label>
+                                                    <div class="col-md-12">
                                                         <input type="text" class="form-control" id="course_title" name="title" placeholder="<?php echo get_phrase('enter_course_title'); ?>" required>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="short_description"><?php echo get_phrase('short_description'); ?></label>
-                                                    <div class="col-md-10">
+                                                    <label class="col-md-4 col-form-label" for="short_description"><?php echo get_phrase('short_description'); ?></label>
+                                                    <div class="col-md-12">
                                                         <textarea name="short_description" id="short_description" class="form-control"></textarea>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="description"><?php echo get_phrase('description'); ?></label>
-                                                    <div class="col-md-10">
+                                                    <label class="col-md-4 col-form-label" for="description"><?php echo get_phrase('description'); ?></label>
+                                                    <div class="col-md-12">
                                                         <textarea name="description" id="description" class="form-control"></textarea>
                                                     </div>
                                                 </div>
-                                                <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="sub_category_id"><?php echo get_phrase('category'); ?><span class="required">*</span></label>
-                                                    <div class="col-md-10">
+                                            </div> <!-- end col -->
+                                            <!-- Column 2 -->
+                                            <div class="col-xl-6">
+                                            <div class="form-group row mb-3">
+                                                    <label class="col-md-4 col-form-label" for="sub_category_id"><?php echo get_phrase('category'); ?><span class="required">*</span></label>
+                                                    <div class="col-md-12">
                                                         <select class="form-control select2" data-toggle="select2" name="sub_category_id" id="sub_category_id" required>
                                                             <option value=""><?php echo get_phrase('select_a_category'); ?></option>
                                                             <?php foreach ($categories->result_array() as $category) : ?>
@@ -107,8 +111,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="level"><?php echo get_phrase('level'); ?></label>
-                                                    <div class="col-md-10">
+                                                    <label class="col-md-4 col-form-label" for="level"><?php echo get_phrase('level'); ?></label>
+                                                    <div class="col-md-12">
                                                         <select class="form-control select2" data-toggle="select2" name="level" id="level">
                                                             <option value="beginner"><?php echo get_phrase('beginner'); ?></option>
                                                             <option value="advanced"><?php echo get_phrase('advanced'); ?></option>
@@ -117,8 +121,8 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="language_made_in"><?php echo get_phrase('language_made_in'); ?></label>
-                                                    <div class="col-md-10">
+                                                    <label class="col-md-4 col-form-label" for="language_made_in"><?php echo get_phrase('language_made_in'); ?></label>
+                                                    <div class="col-md-12">
                                                         <select class="form-control select2" data-toggle="select2" name="language_made_in" id="language_made_in">
                                                             <?php foreach ($languages as $language) : ?>
                                                                 <option value="<?php echo $language; ?>"><?php echo ucfirst($language); ?></option>
@@ -127,22 +131,22 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group row mb-3">
-                                                    <div class="offset-md-2 col-md-10">
+                                                    <div class="offset-md-4 col-md-12">
                                                         <div class="custom-control custom-checkbox">
                                                             <input type="checkbox" class="custom-control-input" name="is_top_course" id="is_top_course" value="1">
                                                             <label class="custom-control-label" for="is_top_course"><?php echo get_phrase('check_if_this_course_is_top_course'); ?></label>
                                                         </div>
                                                     </div>
                                                 </div>
-                                            </div> <!-- end col -->
+                                            </div>
                                         </div> <!-- end row -->
                                     </div> <!-- end tab pane -->
 
                                     <div class="tab-pane" id="requirements">
                                         <div class="row justify-content-center">
-                                            <div class="col-xl-8">
+                                            <div class="col-xl-6">
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="requirements"><?php echo get_phrase('requirements'); ?></label>
+                                                    <label class="col-md-4 col-form-label" for="requirements"><?php echo get_phrase('requirements'); ?></label>
                                                     <div class="col-md-10">
                                                         <div id="requirement_area">
                                                             <div class="d-flex mt-2">
@@ -176,9 +180,9 @@
 
                                     <div class="tab-pane" id="outcomes">
                                         <div class="row justify-content-center">
-                                            <div class="col-xl-8">
+                                            <div class="col-xl-6">
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="outcomes"><?php echo get_phrase('outcomes'); ?></label>
+                                                    <label class="col-md-4 col-form-label" for="outcomes"><?php echo get_phrase('outcomes'); ?></label>
                                                     <div class="col-md-10">
                                                         <div id="outcomes_area">
                                                             <div class="d-flex mt-2">
@@ -209,12 +213,12 @@
                                             </div>
                                         </div>
                                     </div>
-
+                                    <!-- pricing -->
                                     <div class="tab-pane" id="pricing">
                                         <div class="row justify-content-center">
-                                            <div class="col-xl-8">
+                                            <div class="col-xl-6">
                                                 <div class="form-group row mb-3">
-                                                    <div class="offset-md-2 col-md-10">
+                                                    <div class="offset-md-4 col-md-10">
                                                         <div class="custom-control custom-checkbox">
                                                             <input type="checkbox" class="custom-control-input" name="is_free_course" id="is_free_course" value="1">
                                                             <label class="custom-control-label" for="is_free_course"><?php echo get_phrase('check_if_this_is_a_free_course'); ?></label>
@@ -223,14 +227,14 @@
                                                 </div>
 
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="price"><?php echo get_phrase('course_price') . ' (' . currency_code_and_symbol() . ')'; ?></label>
+                                                    <label class="col-md-4 col-form-label" for="price"><?php echo get_phrase('course_price') . ' (' . currency_code_and_symbol() . ')'; ?></label>
                                                     <div class="col-md-10">
                                                         <input type="number" class="form-control" id="price" name="price" placeholder="<?php echo get_phrase('enter_course_course_price'); ?>" min="0">
                                                     </div>
                                                 </div>
 
                                                 <div class="form-group row mb-3">
-                                                    <div class="offset-md-2 col-md-10">
+                                                    <div class="offset-md-4 col-md-10">
                                                         <div class="custom-control custom-checkbox">
                                                             <input type="checkbox" class="custom-control-input" name="discount_flag" id="discount_flag" value="1">
                                                             <label class="custom-control-label" for="discount_flag"><?php echo get_phrase('check_if_this_course_has_discount'); ?></label>
@@ -239,7 +243,7 @@
                                                 </div>
 
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="discounted_price"><?php echo get_phrase('discounted_price') . ' (' . currency_code_and_symbol() . ')'; ?></label>
+                                                    <label class="col-md-4 col-form-label" for="discounted_price"><?php echo get_phrase('discounted_price') . ' (' . currency_code_and_symbol() . ')'; ?></label>
                                                     <div class="col-md-10">
                                                         <input type="number" class="form-control" name="discounted_price" id="discounted_price" onkeyup="calculateDiscountPercentage(this.value)" min="0">
                                                         <small class="text-muted"><?php echo get_phrase('this_course_has'); ?> <span id="discounted_percentage" class="text-danger">0%</span> <?php echo get_phrase('discount'); ?></small>
@@ -251,9 +255,9 @@
                                     <div class="tab-pane" id="media">
                                         <div class="row justify-content-center">
 
-                                            <div class="col-xl-8">
+                                            <div class="col-xl-6">
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="course_overview_provider"><?php echo get_phrase('course_overview_provider'); ?></label>
+                                                    <label class="col-md-5 col-form-label" for="course_overview_provider"><?php echo get_phrase('course_overview_provider'); ?></label>
                                                     <div class="col-md-10">
                                                         <select class="form-control select2" data-toggle="select2" name="course_overview_provider" id="course_overview_provider">
                                                             <option value="youtube"><?php echo get_phrase('youtube'); ?></option>
@@ -264,45 +268,39 @@
                                                 </div>
                                             </div> <!-- end col -->
 
-                                            <div class="col-xl-8">
+                                            <div class="col-xl-6">
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="course_overview_url"><?php echo get_phrase('course_overview_url'); ?></label>
+                                                    <label class="col-md-4 col-form-label" for="course_overview_url"><?php echo get_phrase('course_overview_url'); ?></label>
                                                     <div class="col-md-10">
                                                         <input type="text" class="form-control" name="course_overview_url" id="course_overview_url" placeholder="E.g: https://www.youtube.com/watch?v=oBtf8Yglw2w">
                                                     </div>
                                                 </div>
                                             </div> <!-- end col -->
 
-                                            <div class="col-xl-8">
+                                            <div class="col-xl-6">
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="course_thumbnail_label"><?php echo get_phrase('course_thumbnail'); ?></label>
-                                                    <!-- <div class="col-md-10"> -->
-                                                    <!-- <div class="wrapper-image-preview" style="margin-left: -6px;"> -->
-                                                    <!-- <div class="box" style="width: 250px; height: 250px;"> -->
+                                                    <label class="col-md-4 col-form-label" for="course_thumbnail_label"><?php echo get_phrase('course_thumbnail'); ?></label>
                                                     <div class="upload-options">
-                                                        <label for="course_thumbnail" class="btn"> <i class="mdi mdi-camera"></i> <?php echo get_phrase('Upload'); ?> <br> <small>(600 X 600)</small> </label>
-                                                        <input id="course_thumbnail" style="visibility:hidden;" type="file" class="image-upload" name="course_thumbnail" accept="image/*">
+                                                        <label for="course_thumbnail" style="color: white" class="btn"> <i class="mdi mdi-camera" style="color: white; font: 40px"></i>  <?php echo get_phrase('Upload'); ?> <br> <small>(600 X 600)</small> </label>
+                                                        <input id="course_thumbnail" style="color: white" type="file" class="image-upload" name="course_thumbnail" accept="image/*">
                                                     </div>
-                                                    <!-- </div> -->
-                                                    <!-- </div> -->
-                                                    <!-- </div> -->
                                                 </div>
                                             </div> <!-- end col -->
                                         </div> <!-- end row -->
                                     </div>
                                     <div class="tab-pane" id="seo">
                                         <div class="row justify-content-center">
-                                            <div class="col-xl-8">
+                                            <div class="col-xl-6">
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="website_keywords"><?php echo get_phrase('meta_keywords'); ?></label>
+                                                    <label class="col-md-4 col-form-label" for="website_keywords"><?php echo get_phrase('meta_keywords'); ?></label>
                                                     <div class="col-md-10">
                                                         <input type="text" class="form-control bootstrap-tag-input" id="meta_keywords" name="meta_keywords" data-role="tagsinput" style="width: 100%;" />
                                                     </div>
                                                 </div>
                                             </div> <!-- end col -->
-                                            <div class="col-xl-8">
+                                            <div class="col-xl-6">
                                                 <div class="form-group row mb-3">
-                                                    <label class="col-md-2 col-form-label" for="meta_description"><?php echo get_phrase('meta_description'); ?></label>
+                                                    <label class="col-md-4 col-form-label" for="meta_description"><?php echo get_phrase('meta_description'); ?></label>
                                                     <div class="col-md-10">
                                                         <textarea name="meta_description" class="form-control"></textarea>
                                                     </div>
@@ -310,6 +308,7 @@
                                             </div> <!-- end col -->
                                         </div> <!-- end row -->
                                     </div>
+                                    <!-- Finish -->
                                     <div class="tab-pane" id="finish">
                                         <div class="row">
                                             <div class="col-12">
@@ -337,7 +336,7 @@
                                     </ul>
 
                                 </div> <!-- tab-content -->
-                            </div> <!-- end #progressbarwizard-->
+                            </div> 
                         </form>
                     </div>
                 </div><!-- end row-->
