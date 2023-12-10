@@ -141,7 +141,7 @@
 
                 <div class="col-xl-2">
                     <label for=".." class="text-white"><?php echo get_phrase('..'); ?></label>
-                    <button type="submit" class="btn btn-primary btn-block" name="button"><?php echo get_phrase('filter'); ?></button>
+                    <button type="submit" class="btn btn-primary btn-block" style="border-radius: 40px" name="button"><?php echo get_phrase('filter'); ?></button>
                 </div>
             </form>
 

@@ -85,14 +85,16 @@ foreach ($my_courses as $my_course) {
                 $instructor_details = $this->user_model->get_all_user($course_details['user_id'])->row_array();?>
 
                 <div class="col-lg-3">
-                    <div class="course-box-wrap">
-                            <div class="course-box">
+                    <div class="course-box-wrap" >
+                            <div class="course-box" >
                                 <a href="<?php echo site_url('home/lesson/'.slugify($course_details['title']).'/'.$my_course['course_id']); ?>">
                                     <div class="course-image">
                                         <img src="<?php echo $this->crud_model->get_course_thumbnail_url($my_course['course_id']); ?>" alt="" class="img-fluid">
                                         <span class="play-btn"></span>
+                                     <hr>
                                     </div>
                                 </a>
+                               
                                 <div class="course-details">
                                     <a href="<?php echo site_url('home/course/'.slugify($course_details['title']).'/'.$my_course['course_id']); ?>"><h5 class="title"><?php echo ellipsis($course_details['title']); ?></h5></a>
                                     <a href="<?php echo site_url('home/instructor_page/'.$instructor_details['id']); ?>"><p class="instructors"><?php echo $instructor_details['first_name'].' '.$instructor_details['last_name']; ?></p></a>

@@ -52,28 +52,24 @@
 
                             <div class="tab-pane" id="basic_info">
                                 <div class="row">
-                                    <div class="col-12">
+                                    <!-- column 1 -->
+                                    <div class="col-6">
                                         <div class="form-group row mb-3">
-                                            <label class="col-md-3 col-form-label" for="first_name"><?php echo get_phrase('first_name'); ?><span class="required">*</span></label>
-                                            <div class="col-md-9">
+                                            <label class="col-md-4 col-form-label" for="first_name"><?php echo get_phrase('first_name'); ?><span class="required">*</span></label>
+                                            <div class="col-md-12">
                                                 <input type="text" class="form-control" id="first_name" name="first_name" required>
                                             </div>
                                         </div>
                                         <div class="form-group row mb-3">
-                                            <label class="col-md-3 col-form-label" for="last_name"><?php echo get_phrase('last_name'); ?><span class="required">*</span></label>
-                                            <div class="col-md-9">
+                                            <label class="col-md-4 col-form-label" for="last_name"><?php echo get_phrase('last_name'); ?><span class="required">*</span></label>
+                                            <div class="col-md-12">
                                                 <input type="text" class="form-control" id="last_name" name="last_name" required>
                                             </div>
                                         </div>
+                                        
                                         <div class="form-group row mb-3">
-                                            <label class="col-md-3 col-form-label" for="linkedin_link"><?php echo get_phrase('biography'); ?></label>
-                                            <div class="col-md-9">
-                                                <textarea name="biography" id="summernote-basic" class="form-control"></textarea>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row mb-3">
-                                            <label class="col-md-3 col-form-label" for="user_image"><?php echo get_phrase('user_image'); ?></label>
-                                            <div class="col-md-9">
+                                            <label class="col-md-4 col-form-label" for="user_image"><?php echo get_phrase('user_image'); ?></label>
+                                            <div class="col-md-12">
                                                 <div class="input-group">
                                                     <div class="custom-file">
                                                         <input type="file" class="custom-file-input" id="user_image" name="user_image" accept="image/*" onchange="changeTitleOfImageUploader(this)">
@@ -83,77 +79,96 @@
                                             </div>
                                         </div>
                                     </div> <!-- end col -->
+                                    <!-- Column 2 -->
+                                    <div class="col-6">
+                                        
+
+                                        <div class="form-group row mb-3">
+                                            <label class="col-md-4 col-form-label" for="linkedin_link"><?php echo get_phrase('biography'); ?></label>
+                                            <div class="col-md-12">
+                                                <textarea name="biography" id="summernote-basic" class="form-control"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div> <!-- end row -->
                             </div>
 
                             <div class="tab-pane" id="login_credentials">
                                 <div class="row">
-                                    <div class="col-12">
+                                    <div class="col-6">
                                         <div class="form-group row mb-3">
-                                            <label class="col-md-3 col-form-label" for="email"><?php echo get_phrase('email'); ?><span class="required">*</span></label>
-                                            <div class="col-md-9">
+                                            <label class="col-md-4 col-form-label" for="email"><?php echo get_phrase('email'); ?><span class="required">*</span></label>
+                                            <div class="col-md-12">
                                                 <input type="email" id="email" name="email" class="form-control" required>
                                             </div>
                                         </div>
-                                        <div class="form-group row mb-3">
-                                            <label class="col-md-3 col-form-label" for="password"><?php echo get_phrase('password'); ?><span class="required">*</span></label>
-                                            <div class="col-md-9">
-                                                <input type="password" id="password" name="password" class="form-control" required>
-                                            </div>
-                                        </div>
                                     </div> <!-- end col -->
+                                    <div class="col-6">
+                                        <div class="form-group row mb-3">
+                                                <label class="col-md-4 col-form-label" for="password"><?php echo get_phrase('password'); ?><span class="required">*</span></label>
+                                                <div class="col-md-12">
+                                                    <input type="password" id="password" name="password" class="form-control" required>
+                                                </div>
+                                        </div>
+                                    </div>
                                 </div> <!-- end row -->
                             </div>
 
                             <div class="tab-pane" id="social_information">
                                 <div class="row">
-                                    <div class="col-12">
+                                    <div class="col-6">
                                         <div class="form-group row mb-3">
-                                            <label class="col-md-3 col-form-label" for="facebook_link"> <?php echo get_phrase('facebook'); ?></label>
-                                            <div class="col-md-9">
+                                            <label class="col-md-4 col-form-label" for="facebook_link"> <?php echo get_phrase('facebook'); ?></label>
+                                            <div class="col-md-10">
                                                 <input type="text" id="facebook_link" name="facebook_link" class="form-control">
                                             </div>
                                         </div>
                                         <div class="form-group row mb-3">
-                                            <label class="col-md-3 col-form-label" for="twitter_link"><?php echo get_phrase('twitter'); ?></label>
-                                            <div class="col-md-9">
+                                            <label class="col-md-4 col-form-label" for="twitter_link"><?php echo get_phrase('twitter'); ?></label>
+                                            <div class="col-md-10">
                                                 <input type="text" id="twitter_link" name="twitter_link" class="form-control">
                                             </div>
                                         </div>
-                                        <div class="form-group row mb-3">
-                                            <label class="col-md-3 col-form-label" for="linkedin_link"><?php echo get_phrase('linkedin'); ?></label>
-                                            <div class="col-md-9">
+                                        
+                                    </div> <!-- end col -->
+                                    <div class="col-6">
+                                    <div class="form-group row mb-3">
+                                            <label class="col-md-4 col-form-label" for="linkedin_link"><?php echo get_phrase('linkedin'); ?></label>
+                                            <div class="col-md-10">
                                                 <input type="text" id="linkedin_link" name="linkedin_link" class="form-control">
                                             </div>
                                         </div>
-                                    </div> <!-- end col -->
+                                    </div>
                                 </div> <!-- end row -->
                             </div>
                             <div class="tab-pane" id="payment_info">
                                 <div class="row">
-                                    <div class="col-12">
+                                    <div class="col-6">
                                         <div class="form-group row mb-3">
-                                            <label class="col-md-3 col-form-label" for="facebook_link"> <?php echo get_phrase('paypal_client_id'); ?></label>
-                                            <div class="col-md-9">
+                                            <label class="col-md-4 col-form-label" for="facebook_link"> <?php echo get_phrase('paypal_client_id'); ?></label>
+                                            <div class="col-md-10">
                                                 <input type="text" id="paypal_client_id" name="paypal_client_id" class="form-control">
                                                 <small><?php echo get_phrase("required_for_instructor"); ?></small>
                                             </div>
                                         </div>
                                         <div class="form-group row mb-3">
-                                            <label class="col-md-3 col-form-label" for="stripe_public_key"><?php echo get_phrase('stripe_public_key'); ?></label>
-                                            <div class="col-md-9">
+                                            <label class="col-md-4 col-form-label" for="stripe_public_key"><?php echo get_phrase('stripe_public_key'); ?></label>
+                                            <div class="col-md-10">
                                                 <input type="text" id="stripe_public_key" name="stripe_public_key" class="form-control">
                                                 <small><?php echo get_phrase("required_for_instructor"); ?></small>
                                             </div>
                                         </div>
-                                        <div class="form-group row mb-3">
-                                            <label class="col-md-3 col-form-label" for="stripe_secret_key"><?php echo get_phrase('stripe_secret_key'); ?></label>
-                                            <div class="col-md-9">
+                                        
+                                    </div> <!-- end col -->
+                                    <div class="col-6">
+                                    <div class="form-group row mb-3">
+                                            <label class="col-md-4 col-form-label" for="stripe_secret_key"><?php echo get_phrase('stripe_secret_key'); ?></label>
+                                            <div class="col-md-10">
                                                 <input type="text" id="stripe_secret_key" name="stripe_secret_key" class="form-control">
                                                 <small><?php echo get_phrase("required_for_instructor"); ?></small>
                                             </div>
                                         </div>
-                                    </div> <!-- end col -->
+                                    </div>
                                 </div> <!-- end row -->
                             </div>
                             <div class="tab-pane" id="finish">

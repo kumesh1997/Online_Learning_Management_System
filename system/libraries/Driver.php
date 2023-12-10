@@ -1,54 +1,8 @@
 <?php
-/**
- * CodeIgniter
- *
- * An open source application development framework for PHP
- *
- * This content is released under the MIT License (MIT)
- *
- * Copyright (c) 2014 - 2018, British Columbia Institute of Technology
- *
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- *
- * @package	CodeIgniter
- * @author	EllisLab Dev Team
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (https://ellislab.com/)
- * @copyright	Copyright (c) 2014 - 2018, British Columbia Institute of Technology (http://bcit.ca/)
- * @license	http://opensource.org/licenses/MIT	MIT License
- * @link	https://codeigniter.com
- * @since	Version 1.0.0
- * @filesource
- */
+
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-/**
- * CodeIgniter Driver Library Class
- *
- * This class enables you to create "Driver" libraries that add runtime ability
- * to extend the capabilities of a class via additional driver objects
- *
- * @package		CodeIgniter
- * @subpackage	Libraries
- * @category	Libraries
- * @author		EllisLab Dev Team
- * @link
- */
+
 class CI_Driver_Library {
 
 	/**
@@ -65,15 +19,7 @@ class CI_Driver_Library {
 	 */
 	protected $lib_name;
 
-	/**
-	 * Get magic method
-	 *
-	 * The first time a child is used it won't exist, so we instantiate it
-	 * subsequents calls will go straight to the proper child.
-	 *
-	 * @param	string	Child class name
-	 * @return	object	Child class
-	 */
+	
 	public function __get($child)
 	{
 		// Try to load the driver
@@ -191,20 +137,7 @@ class CI_Driver_Library {
 
 }
 
-// --------------------------------------------------------------------------
 
-/**
- * CodeIgniter Driver Class
- *
- * This class enables you to create drivers for a Library based on the Driver Library.
- * It handles the drivers' access to the parent library
- *
- * @package		CodeIgniter
- * @subpackage	Libraries
- * @category	Libraries
- * @author		EllisLab Dev Team
- * @link
- */
 class CI_Driver {
 
 	/**
@@ -236,20 +169,10 @@ class CI_Driver {
 	 */
 	protected static $_reflections = array();
 
-	/**
-	 * Decorate
-	 *
-	 * Decorates the child with the parent driver lib's methods and properties
-	 *
-	 * @param	object
-	 * @return	void
-	 */
+	
 	public function decorate($parent)
 	{
 		$this->_parent = $parent;
-
-		// Lock down attributes to what is defined in the class
-		// and speed up references in magic methods
 
 		$class_name = get_class($parent);
 
@@ -281,17 +204,7 @@ class CI_Driver {
 		}
 	}
 
-	// --------------------------------------------------------------------
-
-	/**
-	 * __call magic method
-	 *
-	 * Handles access to the parent driver library's methods
-	 *
-	 * @param	string
-	 * @param	array
-	 * @return	mixed
-	 */
+	
 	public function __call($method, $args = array())
 	{
 		if (in_array($method, $this->_methods))
@@ -302,16 +215,7 @@ class CI_Driver {
 		throw new BadMethodCallException('No such method: '.$method.'()');
 	}
 
-	// --------------------------------------------------------------------
 
-	/**
-	 * __get magic method
-	 *
-	 * Handles reading of the parent driver library's properties
-	 *
-	 * @param	string
-	 * @return	mixed
-	 */
 	public function __get($var)
 	{
 		if (in_array($var, $this->_properties))
@@ -320,17 +224,7 @@ class CI_Driver {
 		}
 	}
 
-	// --------------------------------------------------------------------
-
-	/**
-	 * __set magic method
-	 *
-	 * Handles writing to the parent driver library's properties
-	 *
-	 * @param	string
-	 * @param	array
-	 * @return	mixed
-	 */
+	
 	public function __set($var, $val)
 	{
 		if (in_array($var, $this->_properties))
