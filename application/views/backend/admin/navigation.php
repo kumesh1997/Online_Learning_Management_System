@@ -2,8 +2,6 @@
 	$status_wise_courses = $this->crud_model->get_status_wise_courses();
  ?>
 <div class="left-side-menu left-side-menu-detached" style="background-color: #313A46; color: white;">
-	
-	<!--- Sidemenu -->
 		<ul class="metismenu side-nav side-nav-light">
 
 			<li class="side-nav-title side-nav-item" style="color: white;"><?php echo get_phrase('navigation'); ?></li>
