@@ -11,7 +11,7 @@
 
 <div class="row justify-content-center">
     <div class="col-xl-7">
-        <div class="card" style="background-color: #313A46; color: white;">
+        <div class="card" style="background-color: #313A46;">
             <div class="card-body" >
               <div class="col-lg-12">
                 <h4 class="mb-3 header-title"><?php echo get_phrase('category_add_form'); ?></h4>

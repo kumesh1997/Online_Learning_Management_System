@@ -147,7 +147,7 @@
 
             <div class="table-responsive-sm mt-4">
                 <?php if (count($courses) > 0): ?>
-                    <table id="course-datatable" class="table table-striped table-dark dt-responsive nowrap" width="100%" data-page-length='25'>
+                    <table id="course-datatable" class="table table-striped table-dark dt-responsive nowrap course-table" width="100%" data-page-length='25'>
                         <thead>
                             <tr>
                                 <th>#</th>
@@ -254,6 +254,27 @@
                 <?php endif; ?>
             </div>
         </div>
+        <!-- <button class="btn btn-primary" id="downloadBtn">Download PDF</button> -->
     </div>
 </div>
 </div>
+
+
+
+<script>
+  const pdf_print = document.querySelector('');
+  const pdf_table = document.querySelector('#course-datatable');
+
+  const toPDF = function(curse_table){
+    const html_code = `
+    <link rel="stylesheet" href="main.css">
+    <main class="table">curse_table.innerHTML</main>
+    `;
+    const new_window = window.open();
+    new_window.document.write(html_code);
+  }
+
+  pdf_print.onclick = ()=>{
+    toPDF(pdf_table);
+  }
+</script>
