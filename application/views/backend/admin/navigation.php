@@ -1,12 +1,12 @@
 <?php
 	$status_wise_courses = $this->crud_model->get_status_wise_courses();
  ?>
-<div class="left-side-menu left-side-menu-detached" style="background-color: #313A46; color: white;">
-		<ul class="metismenu side-nav side-nav-light">
+<div class="left-side-menu left-side-menu-detached" style="background-color: #313A46; color: white;">	
+	<!--- Sidemenu -->
+		 <ul class="metismenu side-nav side-nav-light" >
+			<li class="side-nav-title side-nav-item" style="color: white; font-size: 0.7875rem;"><?php echo get_phrase('navigation'); ?></li>
 
-			<li class="side-nav-title side-nav-item" style="color: white;"><?php echo get_phrase('navigation'); ?></li>
-
-			<li class="side-nav-item <?php if ($page_name == 'dashboard')echo 'active';?>">
+			<li  class="side-nav-item <?php if ($page_name == 'dashboard')echo 'active';?>">
 				<a href="<?php echo site_url('admin/dashboard'); ?>" class="side-nav-link">
 					<i class="dripicons-view-apps"></i>
 					<span style="font-size: 17px;"><?php echo get_phrase('dashboard'); ?></span>
