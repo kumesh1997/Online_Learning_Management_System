@@ -3,39 +3,31 @@
         <div class="card">
             <div class="card-body" style="background-color: #313A46; color: white; display: flex; justify-content:space-between">
                 <h4 class="page-title"> <i class="mdi mdi-apple-keyboard-command title_icon"></i> <?php echo get_phrase('private_message'); ?></h4>
-
-                 <!-- compose new email button -->
                  <div class="mail-sidebar-row visible-xs" style="width: 30%">
                     <a href="<?php echo site_url('admin/message/message_new');?>" class="btn btn-success btn-block">
                         <?php echo get_phrase('new_message');?>
                         <i class="mdi mdi-pencil float-right"></i>
                     </a>
                 </div>
-            </div> <!-- end card body-->
-        </div> <!-- end card -->
-    </div><!-- end col-->
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="card" >
     <div class="card-body">
         <div class="row">
-            <!-- Chat area -->
             <div class="col-xs-12 col-sm-12 col-md-9">
                 <?php include $message_inner_page_name.'.php';?>
             </div>
-
             <div class="col-xs-12 col-sm-12 col-md-3">
-                <!-- message user inbox list -->
                 <ul class="navbar-nav">
-
                     <?php
                     $current_user = $this->session->userdata('user_id');
                     $this->db->where('sender', $current_user);
                     $this->db->or_where('receiver', $current_user);
                     $message_threads = $this->db->get('message_thread')->result_array();
                     foreach($message_threads as $row):
-
-                        // defining the user to show
                         if ($row['sender'] == $current_user)
                             $user_to_show_id = $row['receiver'];
                         if ($row['receiver'] == $current_user)

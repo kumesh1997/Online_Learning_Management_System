@@ -9,13 +9,9 @@
         <link name="favicon" type="image/x-icon" href="<?php echo base_url();?>uploads/system/favicon.png" rel="shortcut icon" />
     </head>
     <body>
-
         <script>
             var stripe_key = '<?php echo $public_live_key;?>';
         </script>
-
-<!--required for getting the stripe token-->
-
         <img src="<?php echo base_url().'uploads/system/logo-light.png'; ?>" width="15%;"
              style="opacity: 0.05;">
             <form method="post"

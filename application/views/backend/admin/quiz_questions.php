@@ -1,5 +1,4 @@
 <?php
-// $param2 is Quiz id
 $quiz_details = $this->crud_model->get_lessons('lesson', $param2)->row_array();
 $questions = $this->crud_model->get_quiz_questions($param2)->result_array();
 ?>
@@ -40,11 +39,10 @@ $questions = $this->crud_model->get_quiz_questions($param2)->result_array();
                     </div> <!-- end row -->
                 </div> <!-- end card-body -->
             </div> <!-- end card -->
-        </div> <!-- end col -->
+        </div> 
     </div>
 <?php endif; ?>
 
-<!-- Init Dragula -->
 <script type="text/javascript">
 ! function(r) {
     "use strict";
@@ -100,7 +98,6 @@ function sort() {
     for(var i = 0; i < containerArray.length; i++) {
         $('#'+containerArray[i]).each(function () {
             $(this).find('.draggable-item').each(function() {
-                //console.log(this.id);
                 itemArray.push(this.id);
             });
         });

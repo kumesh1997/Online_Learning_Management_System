@@ -46,6 +46,7 @@
 	</div>
 
 <?php include 'scripts.php'; ?>
-
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.9.3/dist/html2pdf.bundle.js"></script>
 </body>
 </html>

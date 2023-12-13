@@ -20,8 +20,8 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-9">
-              <div class="user-dashboard-box mt-3">
-                  <div class="user-dashboard-content w-100 login-form">
+              <div class="user-dashboard-box mt-3" style="border-radius: 35px">
+                  <div class="user-dashboard-content w-100 login-form" style="border-radius: 35px" >
                       <div class="content-title-box">
                           <div class="title"><?php echo get_phrase('login'); ?></div>
                           <div class="subtitle"><?php echo get_phrase('provide_your_valid_login_credentials'); ?>.</div>

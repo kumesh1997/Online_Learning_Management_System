@@ -7,7 +7,6 @@
         </div> <!-- end card -->
     </div><!-- end col-->
 </div>
-
 <div class="row">
     <div class="col-xl-7">
         <div class="card">

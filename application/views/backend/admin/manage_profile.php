@@ -3,9 +3,9 @@
 		<div class="card">
 			<div class="card-body" style="background-color: #313A46; color: white;">
 				<h4 class="page-title"> <i class="mdi mdi-apple-keyboard-command title_icon"></i> <?php echo get_phrase('manage_profile'); ?></h4>
-			</div> <!-- end card body-->
-		</div> <!-- end card -->
-	</div><!-- end col-->
+			</div>
+		</div>
+	</div>
 </div>
 
 <div class="row ">
@@ -85,11 +85,9 @@
 			endforeach;
 			?>
 		</form>
-	</div> <!-- end card body-->
-</div> <!-- end card -->
+	</div>
 </div>
-
-<!-- Change Password -->
+</div>
 <div class="col-xl-6">
 	<div class="card">
 		<div class="card-body" style="background-color: #313A46; color: white;">

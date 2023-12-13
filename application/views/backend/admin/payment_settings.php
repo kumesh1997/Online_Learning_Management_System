@@ -4,20 +4,18 @@ $paypal = json_decode($paypal_settings);
 $stripe_settings = $this->db->get_where('settings', array('key' => 'stripe_keys'))->row()->value;
 $stripe = json_decode($stripe_settings);
 ?>
-<!-- start page title -->
 <div class="row ">
     <div class="col-xl-12">
         <div class="card">
             <div class="card-body">
                 <h4 class="page-title"> <i class="mdi mdi-apple-keyboard-command title_icon"></i> <?php echo get_phrase('setup_payment_informations'); ?></h4>
-            </div> <!-- end card body-->
-        </div> <!-- end card -->
-    </div><!-- end col-->
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="row">
     <div class="col-md-7" style="padding: 0;">
-        <!-- System Currency Settings -->
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
