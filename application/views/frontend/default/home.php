@@ -201,6 +201,7 @@
                                 <?php endforeach; ?>
                             </ul>
                         </div>
+                        <!-- Add to Cart Button -->
                         <div class="popover-btns">
                             <?php if (is_purchased($top_course['id'])): ?>
                                 <div class="purchased">

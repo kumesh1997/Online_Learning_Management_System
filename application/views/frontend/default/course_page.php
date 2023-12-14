@@ -1,3 +1,59 @@
+<script type="text/javascript">
+   function handleBuyNow(elem) {
+
+url1 = '<?php echo site_url('home/handleCartItemForBuyNowButton');?>';
+url2 = '<?php echo site_url('home/refreshWishList');?>';
+var explodedArray = elem.id.split("_");
+var course_id = explodedArray[1];
+
+$.ajax({
+  url: url1,
+  type : 'POST',
+  data : {course_id : course_id},
+  success: function(response)
+  {
+    $('#cart_items').html(response);
+    $.ajax({
+      url: url2,
+      type : 'POST',
+      success: function(response)
+      {
+        $('#wishlist_items').html(response);
+      }
+    });
+  }
+});
+}
+  function handleCartItems(elem) {
+      
+      url1 = '<?php echo site_url('home/handleCartItems');?>';
+      url2 = '<?php echo site_url('home/refreshWishList');?>';
+      $.ajax({
+        url: url1,
+        type : 'POST',
+        data : {course_id : elem.id},
+        success: function(response)
+        {
+          $('#cart_items').html(response);
+          if ($(elem).hasClass('addedToCart')) {
+            $(elem).removeClass('addedToCart')
+            $(elem).text("<?php echo get_phrase('add_to_cart'); ?>");
+          }else {
+            $(elem).addClass('addedToCart')
+            $(elem).text("<?php echo get_phrase('added_to_cart'); ?>");
+          }
+          $.ajax({
+            url: url2,
+            type : 'POST',
+            success: function(response)
+            {
+              $('#wishlist_items').html(response);
+            }
+          });
+        }
+      });
+    }
+</script>
 <?php
 $course_details = $this->crud_model->get_course_by_id($course_id)->row_array();
 $instructor_details = $this->user_model->get_all_user($course_details['user_id'])->row_array();
@@ -523,60 +579,10 @@ $instructor_details = $this->user_model->get_all_user($course_details['user_id']
     }
     </style>
     <script type="text/javascript">
-    function handleCartItems(elem) {
-      url1 = '<?php echo site_url('home/handleCartItems');?>';
-      url2 = '<?php echo site_url('home/refreshWishList');?>';
-      $.ajax({
-        url: url1,
-        type : 'POST',
-        data : {course_id : elem.id},
-        success: function(response)
-        {
-          $('#cart_items').html(response);
-          if ($(elem).hasClass('addedToCart')) {
-            $(elem).removeClass('addedToCart')
-            $(elem).text("<?php echo get_phrase('add_to_cart'); ?>");
-          }else {
-            $(elem).addClass('addedToCart')
-            $(elem).text("<?php echo get_phrase('added_to_cart'); ?>");
-          }
-          $.ajax({
-            url: url2,
-            type : 'POST',
-            success: function(response)
-            {
-              $('#wishlist_items').html(response);
-            }
-          });
-        }
-      });
-    }
+      
+  
 
-    function handleBuyNow(elem) {
-
-      url1 = '<?php echo site_url('home/handleCartItemForBuyNowButton');?>';
-      url2 = '<?php echo site_url('home/refreshWishList');?>';
-      var explodedArray = elem.id.split("_");
-      var course_id = explodedArray[1];
-
-      $.ajax({
-        url: url1,
-        type : 'POST',
-        data : {course_id : course_id},
-        success: function(response)
-        {
-          $('#cart_items').html(response);
-          $.ajax({
-            url: url2,
-            type : 'POST',
-            success: function(response)
-            {
-              $('#wishlist_items').html(response);
-            }
-          });
-        }
-      });
-    }
+   
 
     function handleEnrolledButton() {
       console.log('here');
