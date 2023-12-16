@@ -677,6 +677,7 @@ class CI_Session {
 	{
 		if (isset($key))
 		{
+            $this->session->unmark_flash($key);
 			return (isset($_SESSION['__ci_vars'], $_SESSION['__ci_vars'][$key], $_SESSION[$key]) && ! is_int($_SESSION['__ci_vars'][$key]))
 				? $_SESSION[$key]
 				: NULL;
@@ -691,6 +692,8 @@ class CI_Session {
 				is_int($value) OR $flashdata[$key] = $_SESSION[$key];
 			}
 		}
+
+        $this->session->unmark_flash($key);
 
 		return $flashdata;
 	}

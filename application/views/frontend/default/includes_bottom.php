@@ -20,6 +20,7 @@
 
 <script type="text/javascript">
 	toastr.success('<?php echo $this->session->flashdata("flash_message");?>');
+    <?php echo $this->session->unmark_flash("flash_message");?>
 </script>
 
 <?php endif;?>
@@ -27,7 +28,8 @@
 <?php if ($this->session->flashdata('error_message') != ""):?>
 
 <script type="text/javascript">
-	toastr.error('<?php echo $this->session->flashdata("error_message");?>');
+    toastr.error('<?php echo $this->session->flashdata("error_message");?>');
+    <?php echo $this->session->unmark_flash("error_message");?>
 </script>
 
 <?php endif;?>
