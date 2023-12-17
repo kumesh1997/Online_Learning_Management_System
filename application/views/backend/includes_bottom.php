@@ -22,17 +22,17 @@
 <script src="<?php echo base_url('assets/backend/js/pages/demo.dashboard.js'); ?>"></script>
 <script src="<?php echo base_url('assets/backend/js/pages/datatable-initializer.js'); ?>"></script>
 <script src="<?php echo base_url('assets/backend/js/font-awesome-icon-picker/fontawesome-iconpicker.min.js'); ?>" charset="utf-8"></script>
-<script src="<?php echo base_url('assets/backend/js/vendor/bootstrap-tagsinput.min.js');?>" charset="utf-8"></script>
+<script src="<?php echo base_url('assets/backend/js/vendor/bootstrap-tagsinput.min.js'); ?>" charset="utf-8"></script>
 <script src="<?php echo base_url('assets/backend/js/bootstrap-tagsinput.min.js'); ?>"></script>
-<script src="<?php echo base_url('assets/backend/js/vendor/dropzone.min.js');?>" charset="utf-8"></script>
-<script src="<?php echo base_url('assets/backend/js/ui/component.fileupload.js');?>" charset="utf-8"></script>
+<script src="<?php echo base_url('assets/backend/js/vendor/dropzone.min.js'); ?>" charset="utf-8"></script>
+<script src="<?php echo base_url('assets/backend/js/ui/component.fileupload.js'); ?>" charset="utf-8"></script>
 <script src="<?php echo base_url('assets/backend/js/pages/demo.form-wizard.js'); ?>"></script>
 <!-- dragula js-->
 <script src="<?php echo base_url('assets/backend/js/vendor/dragula.min.js'); ?>"></script>
 <!-- component js -->
 <script src="<?php echo base_url('assets/backend/js/ui/component.dragula.js'); ?>"></script>
 
-<script src="<?php echo site_url('assets/backend/js/custom.js');?>"></script>
+<script src="<?php echo site_url('assets/backend/js/custom.js'); ?>"></script>
 
 <!-- Dashboard chart's data is coming from this file -->
 <?php include 'admin/dashboard-chart.php'; ?>
@@ -40,44 +40,55 @@
 <script type="text/javascript">
   $(document).ready(function() {
     $(function() {
-       $('.icon-picker').iconpicker();
-     });
+      $('.icon-picker').iconpicker();
+    });
   });
 </script>
 
 <!-- Toastr and alert notifications scripts -->
 <script type="text/javascript">
-function notify(message) {
-  $.NotificationApp.send("<?php echo get_phrase('heads_up'); ?>!", message ,"bottom-right","rgba(0,0,0,0.2)","info");
-}
+  function notify(message) {
+    $.NotificationApp.send("<?php echo get_phrase('heads_up');
+                            echo $this->session->unmark_flash("heads_up"); ?>!", message, "bottom-right", "rgba(0,0,0,0.2)", "info");
+  }
 
-function success_notify(message) {
-  $.NotificationApp.send("<?php echo get_phrase('congratulations'); ?>!", message ,"bottom-right","rgba(0,0,0,0.2)","success");
-}
+  function success_notify(message) {
+    $.NotificationApp.send("<?php echo get_phrase('congratulations');
+                            echo $this->session->unmark_flash("congratulations"); ?>!", message, "bottom-right", "rgba(0,0,0,0.2)", "success");
+  }
 
-function error_notify(message) {
-  $.NotificationApp.send("<?php echo get_phrase('oh_snap'); ?>!", message ,"bottom-right","rgba(0,0,0,0.2)","error");
-}
+  function error_notify(message) {
+    $.NotificationApp.send("<?php echo get_phrase('oh_snap');
+                            echo $this->session->unmark_flash("oh_snap"); ?>!", message, "bottom-right", "rgba(0,0,0,0.2)", "error");
+  }
 
-function error_required_field() {
-  $.NotificationApp.send("<?php echo get_phrase('oh_snap'); ?>!", "<?php echo get_phrase('please_fill_all_the_required_fields'); ?>" ,"bottom-right","rgba(0,0,0,0.2)","error");
-}
+  function error_required_field() {
+    $.NotificationApp.send("<?php echo get_phrase('oh_snap');
+                            echo $this->session->unmark_flash("oh_snap"); ?>!", "<?php echo get_phrase('please_fill_all_the_required_fields');
+                                                                                  echo $this->session->unmark_flash("please_fill_all_the_required_fields"); ?>", "bottom-right", "rgba(0,0,0,0.2)", "error");
+  }
 </script>
 
-<?php if ($this->session->flashdata('info_message') != ""):?>
-<script type="text/javascript">
-  $.NotificationApp.send("<?php echo get_phrase('success'); ?>!", '<?php echo $this->session->flashdata("info_message");?>' ,"bottom-right","rgba(0,0,0,0.2)","info");
-</script>
-<?php endif;?>
+<?php if ($this->session->flashdata('info_message') != "") : ?>
+  <script type="text/javascript">
+    $.NotificationApp.send("<?php echo get_phrase('success');
+                            echo $this->session->unmark_flash("success"); ?>!", '<?php echo $this->session->flashdata("info_message");
+                                                                                  echo $this->session->unmark_flash("info_message"); ?>', "bottom-right", "rgba(0,0,0,0.2)", "info");
+  </script>
+<?php endif; ?>
 
-<?php if ($this->session->flashdata('error_message') != ""):?>
-<script type="text/javascript">
-  $.NotificationApp.send("<?php echo get_phrase('oh_snap'); ?>!", '<?php echo $this->session->flashdata("error_message");?>' ,"bottom-right","rgba(0,0,0,0.2)","error");
-</script>
-<?php endif;?>
+<?php if ($this->session->flashdata('error_message') != "") : ?>
+  <script type="text/javascript">
+    $.NotificationApp.send("<?php echo get_phrase('oh_snap');
+                            echo $this->session->unmark_flash("oh_snap"); ?>!", '<?php echo $this->session->flashdata("error_message");
+                                                                                  echo $this->session->unmark_flash("error_message"); ?>', "bottom-right", "rgba(0,0,0,0.2)", "error");
+  </script>
+<?php endif; ?>
 
-<?php if ($this->session->flashdata('flash_message') != ""):?>
-<script type="text/javascript">
-  $.NotificationApp.send("<?php echo get_phrase('congratulations'); ?>!", '<?php echo $this->session->flashdata("flash_message");?>' ,"bottom-right","rgba(0,0,0,0.2)","success");
-</script>
-<?php endif;?>
+<?php if ($this->session->flashdata('flash_message') != "") : ?>
+  <script type="text/javascript">
+    $.NotificationApp.send("<?php echo get_phrase('congratulations'); ?>!", '<?php echo $this->session->flashdata("flash_message");
+                                                                              echo $this->session->unmark_flash("congratulations");
+                                                                              echo $this->session->unmark_flash("flash_message"); ?>', "bottom-right", "rgba(0,0,0,0.2)", "success");
+  </script>
+<?php endif; ?>
